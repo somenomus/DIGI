@@ -46,7 +46,8 @@
    280339,
    340338
   ],
-  "notes": "Transitions collected across chained training jobs; crash/resume points are marked as episode breaks so all (s,a,r,s') pairs are valid."
+  "notes": "Transitions collected across chained training jobs; crash/resume points are marked as episode breaks so all (s,a,r,s') pairs are valid.",
+  "label_correction": "2026-09-06: episodes 25-36 were relabelled. Job j4 logged a sixth episode that never wrote a transition (the job died in it), so the sequential label assignment consumed a phantom and shifted every later label by one. Labels now follow the job logs one-to-one; episode 25 is 0.40 not 0.89, and 0.84 (the last j5 episode) is present. Check: mean ROP in the 2499-2501 m window vs strength within j5 is r=-0.78 after the fix, r=+0.48 before."
  },
  "episodes": [
   {
@@ -229,84 +230,84 @@
    "length": 14700,
    "return": -2456.20263671875,
    "terminated": false,
-   "ucs_multiplier": 0.89
+   "ucs_multiplier": 0.4
   },
   {
    "episode": 26,
    "length": 14700,
    "return": 2720.794677734375,
    "terminated": false,
-   "ucs_multiplier": 0.4
+   "ucs_multiplier": 0.46
   },
   {
    "episode": 27,
    "length": 14700,
    "return": 1967.561767578125,
    "terminated": false,
-   "ucs_multiplier": 0.46
+   "ucs_multiplier": 0.73
   },
   {
    "episode": 28,
    "length": 14700,
    "return": 814.2321166992188,
    "terminated": false,
-   "ucs_multiplier": 0.73
+   "ucs_multiplier": 0.96
   },
   {
    "episode": 29,
    "length": 14700,
    "return": 1781.2391357421875,
    "terminated": false,
-   "ucs_multiplier": 0.96
+   "ucs_multiplier": 0.57
   },
   {
    "episode": 30,
    "length": 14700,
    "return": 1427.68310546875,
    "terminated": false,
-   "ucs_multiplier": 0.57
+   "ucs_multiplier": 0.83
   },
   {
    "episode": 31,
    "length": 14700,
    "return": 2233.5791015625,
    "terminated": false,
-   "ucs_multiplier": 0.83
+   "ucs_multiplier": 0.66
   },
   {
    "episode": 32,
    "length": 14700,
    "return": 1578.4754638671875,
    "terminated": false,
-   "ucs_multiplier": 0.66
+   "ucs_multiplier": 0.79
   },
   {
    "episode": 33,
    "length": 14700,
    "return": 2631.293701171875,
    "terminated": false,
-   "ucs_multiplier": 0.79
+   "ucs_multiplier": 0.54
   },
   {
    "episode": 34,
    "length": 14700,
    "return": 2418.69140625,
    "terminated": false,
-   "ucs_multiplier": 0.54
+   "ucs_multiplier": 0.55
   },
   {
    "episode": 35,
    "length": 14700,
    "return": 2502.62646484375,
    "terminated": false,
-   "ucs_multiplier": 0.55
+   "ucs_multiplier": 0.47
   },
   {
    "episode": 36,
    "length": 8300,
    "return": 1684.498046875,
    "terminated": false,
-   "ucs_multiplier": 0.47
+   "ucs_multiplier": 0.84
   }
  ]
 }
