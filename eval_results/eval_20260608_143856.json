@@ -1,0 +1,73 @@
+{
+  "model_path": "logs/step4_hardening_20260512-173623/tqc_drilling_final.zip",
+  "timestamp": "2026-06-08T14:38:56.232848",
+  "ucs_values": [
+    0.2,
+    0.4,
+    1.0
+  ],
+  "episodes_per_ucs": 1,
+  "max_steps": 15000,
+  "use_detournay_rop": true,
+  "wob_proportional_gain": null,
+  "base_config_name": "drill_realistic",
+  "summary": {
+    "total_episodes": 3,
+    "targets_reached": 0,
+    "target_rate": 0.0,
+    "avg_reward": 4152.536420519981,
+    "std_reward": 1315.1031304131257,
+    "avg_depth_m": 8.363469586522418,
+    "avg_rop_m_h": 20.285351736543163,
+    "avg_perf_score": -0.38839856557770264,
+    "min_safety_margin": 0.017915025932740556,
+    "total_violations": 378
+  },
+  "per_episode": [
+    {
+      "ucs": 0.2,
+      "total_reward": 5163.8544903283755,
+      "steps": 14700,
+      "depth_progress_m": 10.43764732600539,
+      "target_reached": false,
+      "avg_rop_mm_s": 6.11679832076841,
+      "max_rop_mm_s": 37.994635663380905,
+      "avg_rop_m_h": 22.020473954766278,
+      "avg_perf_score": -0.38092069988020894,
+      "avg_safety_margin": 0.019766725232760705,
+      "min_safety_margin": 0.017915025932740556,
+      "avg_stability_score": -0.18328843130506778,
+      "safety_violations": 126
+    },
+    {
+      "ucs": 0.4,
+      "total_reward": 4998.606347609598,
+      "steps": 14700,
+      "depth_progress_m": 9.124266368848566,
+      "target_reached": false,
+      "avg_rop_mm_s": 5.223341887328395,
+      "max_rop_mm_s": 37.994635663380905,
+      "avg_rop_m_h": 18.804030794382225,
+      "avg_perf_score": -0.40217991589001356,
+      "avg_safety_margin": 0.01992523832508502,
+      "min_safety_margin": 0.018022033047626642,
+      "avg_stability_score": -0.2091920475125907,
+      "safety_violations": 126
+    },
+    {
+      "ucs": 1.0,
+      "total_reward": 2295.1484236219712,
+      "steps": 7338,
+      "depth_progress_m": 5.528495064713297,
+      "target_reached": false,
+      "avg_rop_mm_s": 5.564319572355828,
+      "max_rop_mm_s": 37.994635663380905,
+      "avg_rop_m_h": 20.031550460480982,
+      "avg_perf_score": -0.3820950809628854,
+      "avg_safety_margin": 0.01952010537147063,
+      "min_safety_margin": 0.018022033047626642,
+      "avg_stability_score": -0.2714773612987013,
+      "safety_violations": 126
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "model_path": "logs/step6_realistic_finetune_j5_20260616-125910/tqc_drilling_final.zip",
+  "timestamp": "2026-06-22T15:42:34.185464",
+  "ucs_values": [
+    1.0
+  ],
+  "episodes_per_ucs": 1,
+  "max_steps": 50000,
+  "use_detournay_rop": true,
+  "wob_proportional_gain": null,
+  "base_config_name": "drill_realistic",
+  "summary": {
+    "total_episodes": 1,
+    "targets_reached": 1,
+    "target_rate": 1.0,
+    "avg_reward": 4533.310605045854,
+    "std_reward": 0.0,
+    "avg_depth_m": 11.000138855551995,
+    "avg_rop_m_h": 9.381154871229054,
+    "avg_perf_score": -0.5052492607558964,
+    "min_safety_margin": 0.01943402383630903,
+    "total_violations": 8
+  },
+  "per_episode": [
+    {
+      "ucs": 1.0,
+      "total_reward": 4533.310605045854,
+      "steps": 36664,
+      "depth_progress_m": 11.000138855551995,
+      "target_reached": true,
+      "avg_rop_mm_s": 2.6058763531191818,
+      "max_rop_mm_s": 32.077082150863134,
+      "avg_rop_m_h": 9.381154871229054,
+      "avg_perf_score": -0.5052492607558964,
+      "avg_safety_margin": 0.023966770914115147,
+      "min_safety_margin": 0.01943402383630903,
+      "avg_stability_score": -0.026349696577584673,
+      "safety_violations": 8
+    }
+  ]
+}

@@ -1,0 +1,312 @@
+{
+ "name": "digi_drilling_v1",
+ "description": "Offline RL dataset for autonomous drilling ROP control, collected during TQC fine-tuning on the OpenLab simulator (transient torque-and-drag, Detournay bit-rock model) on a realistic layered formation (50-70 MPa UCS) with per-episode strength multiplier ~ U[0.2, 1.0].",
+ "num_transitions": 510339,
+ "num_episodes": 37,
+ "observation_space": {
+  "dim": 15,
+  "components": [
+   "10 normalized simulator channels (ROP, ToS velocity, SPP, surface torque, downhole pressure, downhole ECD, flow out, hook load, bit depth, connection)",
+   "2 ECD stability features (rolling std, trend slope)",
+   "3 previous actions"
+  ]
+ },
+ "action_space": {
+  "dim": 3,
+  "range": "[-1, 1]",
+  "mapping": {
+   "a0": "RPM in [80, 120] rpm",
+   "a1": "WOB in [8, 12] t",
+   "a2": "flow in [1800, 2200] L/min"
+  },
+  "note": "WOB delivered via simulator auto-driller"
+ },
+ "reward": {
+  "type": "three-tier (safety > stability > performance) + completion shaping",
+  "shaping": {
+   "depth_progress_weight_per_m": 500.0,
+   "time_step_penalty": 0.4,
+   "completion_bonus": 1000.0
+  }
+ },
+ "environment": {
+  "simulator": "OpenLab (live.openlab.app)",
+  "mechanical_model": "transient torque-and-drag, 0.1 s step",
+  "bit_rock_model": "Detournay (UseDetournayROPModel=True)",
+  "formation": "drill_realistic: 50/57/63/70/63/57 MPa at MD 2497/2502/2503/2506/2507/2508 m, scaled per episode by multiplier in [0.2, 1.0]",
+  "section": "2497 m -> 2508 m (11 m)",
+  "warmup": "300 neutral-setpoint steps per episode (included in data? NO - buffer records policy-controlled steps only)"
+ },
+ "provenance": {
+  "source_buffer": "logs/step6_realistic_finetune_j5_20260616-125910/tqc_drilling_final_buffer.pkl",
+  "collection_policy": "TQC training policy (exploratory, improving over time)",
+  "glue_points_marked_as_timeouts": [
+   96143,
+   110339,
+   280339,
+   340338
+  ],
+  "notes": "Transitions collected across chained training jobs; crash/resume points are marked as episode breaks so all (s,a,r,s') pairs are valid."
+ },
+ "episodes": [
+  {
+   "episode": 0,
+   "length": 14700,
+   "return": -12477.38671875,
+   "terminated": false,
+   "ucs_multiplier": 0.81
+  },
+  {
+   "episode": 1,
+   "length": 14700,
+   "return": 1270.167724609375,
+   "terminated": false,
+   "ucs_multiplier": 0.89
+  },
+  {
+   "episode": 2,
+   "length": 14700,
+   "return": 629.3895263671875,
+   "terminated": false,
+   "ucs_multiplier": 0.73
+  },
+  {
+   "episode": 3,
+   "length": 14700,
+   "return": 593.4447021484375,
+   "terminated": false,
+   "ucs_multiplier": 0.93
+  },
+  {
+   "episode": 4,
+   "length": 14700,
+   "return": 2302.135986328125,
+   "terminated": false,
+   "ucs_multiplier": 0.37
+  },
+  {
+   "episode": 5,
+   "length": 14700,
+   "return": 1587.9761962890625,
+   "terminated": false,
+   "ucs_multiplier": 0.87
+  },
+  {
+   "episode": 6,
+   "length": 7944,
+   "return": 1903.564697265625,
+   "terminated": false,
+   "ucs_multiplier": 0.38
+  },
+  {
+   "episode": 7,
+   "length": 14196,
+   "return": -556.8944091796875,
+   "terminated": false,
+   "ucs_multiplier": 0.34
+  },
+  {
+   "episode": 8,
+   "length": 14700,
+   "return": -1290.556640625,
+   "terminated": false,
+   "ucs_multiplier": 0.59
+  },
+  {
+   "episode": 9,
+   "length": 14700,
+   "return": 826.8145751953125,
+   "terminated": false,
+   "ucs_multiplier": 1.0
+  },
+  {
+   "episode": 10,
+   "length": 14700,
+   "return": -8553.6572265625,
+   "terminated": false,
+   "ucs_multiplier": 0.94
+  },
+  {
+   "episode": 11,
+   "length": 14700,
+   "return": -2215.022705078125,
+   "terminated": false,
+   "ucs_multiplier": 0.79
+  },
+  {
+   "episode": 12,
+   "length": 12180,
+   "return": 2443.765625,
+   "terminated": true,
+   "ucs_multiplier": 0.24
+  },
+  {
+   "episode": 13,
+   "length": 14700,
+   "return": -1482.6876220703125,
+   "terminated": false,
+   "ucs_multiplier": 0.64
+  },
+  {
+   "episode": 14,
+   "length": 14700,
+   "return": 393.10076904296875,
+   "terminated": false,
+   "ucs_multiplier": 0.51
+  },
+  {
+   "episode": 15,
+   "length": 14700,
+   "return": 2112.31787109375,
+   "terminated": false,
+   "ucs_multiplier": 0.72
+  },
+  {
+   "episode": 16,
+   "length": 14700,
+   "return": 1741.1865234375,
+   "terminated": false,
+   "ucs_multiplier": 0.86
+  },
+  {
+   "episode": 17,
+   "length": 14700,
+   "return": 2588.3828125,
+   "terminated": false,
+   "ucs_multiplier": 0.49
+  },
+  {
+   "episode": 18,
+   "length": 14700,
+   "return": 2120.192626953125,
+   "terminated": false,
+   "ucs_multiplier": 0.94
+  },
+  {
+   "episode": 19,
+   "length": 10820,
+   "return": 1857.9677734375,
+   "terminated": false,
+   "ucs_multiplier": 0.76
+  },
+  {
+   "episode": 20,
+   "length": 14700,
+   "return": -2466.59912109375,
+   "terminated": false,
+   "ucs_multiplier": 0.86
+  },
+  {
+   "episode": 21,
+   "length": 14700,
+   "return": 1720.7335205078125,
+   "terminated": false,
+   "ucs_multiplier": 0.81
+  },
+  {
+   "episode": 22,
+   "length": 14700,
+   "return": 3226.74755859375,
+   "terminated": false,
+   "ucs_multiplier": 0.25
+  },
+  {
+   "episode": 23,
+   "length": 14700,
+   "return": 2062.017822265625,
+   "terminated": false,
+   "ucs_multiplier": 0.89
+  },
+  {
+   "episode": 24,
+   "length": 1199,
+   "return": 1170.35693359375,
+   "terminated": false,
+   "ucs_multiplier": 0.75
+  },
+  {
+   "episode": 25,
+   "length": 14700,
+   "return": -2456.20263671875,
+   "terminated": false,
+   "ucs_multiplier": 0.89
+  },
+  {
+   "episode": 26,
+   "length": 14700,
+   "return": 2720.794677734375,
+   "terminated": false,
+   "ucs_multiplier": 0.4
+  },
+  {
+   "episode": 27,
+   "length": 14700,
+   "return": 1967.561767578125,
+   "terminated": false,
+   "ucs_multiplier": 0.46
+  },
+  {
+   "episode": 28,
+   "length": 14700,
+   "return": 814.2321166992188,
+   "terminated": false,
+   "ucs_multiplier": 0.73
+  },
+  {
+   "episode": 29,
+   "length": 14700,
+   "return": 1781.2391357421875,
+   "terminated": false,
+   "ucs_multiplier": 0.96
+  },
+  {
+   "episode": 30,
+   "length": 14700,
+   "return": 1427.68310546875,
+   "terminated": false,
+   "ucs_multiplier": 0.57
+  },
+  {
+   "episode": 31,
+   "length": 14700,
+   "return": 2233.5791015625,
+   "terminated": false,
+   "ucs_multiplier": 0.83
+  },
+  {
+   "episode": 32,
+   "length": 14700,
+   "return": 1578.4754638671875,
+   "terminated": false,
+   "ucs_multiplier": 0.66
+  },
+  {
+   "episode": 33,
+   "length": 14700,
+   "return": 2631.293701171875,
+   "terminated": false,
+   "ucs_multiplier": 0.79
+  },
+  {
+   "episode": 34,
+   "length": 14700,
+   "return": 2418.69140625,
+   "terminated": false,
+   "ucs_multiplier": 0.54
+  },
+  {
+   "episode": 35,
+   "length": 14700,
+   "return": 2502.62646484375,
+   "terminated": false,
+   "ucs_multiplier": 0.55
+  },
+  {
+   "episode": 36,
+   "length": 8300,
+   "return": 1684.498046875,
+   "terminated": false,
+   "ucs_multiplier": 0.47
+  }
+ ]
+}

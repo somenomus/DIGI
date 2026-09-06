@@ -1,0 +1,29 @@
+{
+ "policy": "offline_rl/models/td3_finetuned/policy_finetuned.d3",
+ "results": [
+  {
+   "ucs": 0.4,
+   "return": -4063.3398480111655,
+   "depth_m": 5.116219706742868,
+   "target": false,
+   "steps": 4860,
+   "error": null
+  },
+  {
+   "ucs": 0.2,
+   "return": -22120.929652084156,
+   "depth_m": 11.0001704066608,
+   "target": true,
+   "steps": 27574,
+   "error": null
+  },
+  {
+   "ucs": 1.0,
+   "return": -867.1192239320986,
+   "depth_m": 11.000011468908724,
+   "target": true,
+   "steps": 38095,
+   "error": null
+  }
+ ]
+}

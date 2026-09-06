@@ -1,0 +1,20 @@
+{
+  "best_trial_number": 4,
+  "best_value": -4083.0954177747653,
+  "best_params": {
+    "learning_rate": 1.9010245319870364e-05,
+    "gamma": 0.9643150877782256,
+    "tau": 0.007960875022580142,
+    "batch_size": 128
+  },
+  "n_episodes_per_trial": 3,
+  "ucs_mode": "baseline",
+  "ucs_profiles_tested": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "objective_components": "avg_reward + depth_bonus + safety_bonus + improvement",
+  "timestamp": "2026-04-10T08:05:56.987380",
+  "total_trials": 11
+}

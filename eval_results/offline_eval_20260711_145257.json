@@ -1,0 +1,13 @@
+{
+ "policy": "offline_rl/models/iql_full_200000/policy.d3",
+ "results": [
+  {
+   "ucs": 0.4,
+   "return": -2470.07641824638,
+   "depth_m": 9.839822239634486,
+   "target": false,
+   "steps": 24700,
+   "error": null
+  }
+ ]
+}

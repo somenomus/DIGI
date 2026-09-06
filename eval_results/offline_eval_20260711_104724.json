@@ -1,0 +1,13 @@
+{
+ "policy": "offline_rl/models/td3bc_posret_200000/policy.d3",
+ "results": [
+  {
+   "ucs": 0.4,
+   "return": -16698.653216918166,
+   "depth_m": 11.000304608881834,
+   "target": true,
+   "steps": 18002,
+   "error": null
+  }
+ ]
+}

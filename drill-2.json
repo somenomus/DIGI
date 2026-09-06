@@ -1,0 +1,2210 @@
+﻿{
+  "Architecture": {
+    "OpenHole": {
+      "HoleSize": 0.21589999999999998,
+      "DepthInterval": {
+        "MaxX": 2500,
+        "MinX": 2200
+      },
+      "PilotHoleSize": 0.21589999999999998
+    },
+    "MPDMethod": "BACK_PRESSURE",
+    "CasingStrings": [
+      {
+        "IsRiser": false,
+        "DepthInterval": {
+          "MaxX": 422,
+          "MinX": 200
+        },
+        "CasingElements": [
+          {
+            "$type": "IRIS.WellboreData.CasingElement, IRIS.WellboreData",
+            "BodyID": 0.78105,
+            "BodyOD": 0.8128,
+            "Length": 222,
+            "TensileStrength": "NaN",
+            "TorsionalStrength": "NaN"
+          }
+        ],
+        "RoughnessHeight": 0.000015
+      },
+      {
+        "IsRiser": false,
+        "DepthInterval": {
+          "MaxX": 465,
+          "MinX": 200
+        },
+        "CasingElements": [
+          {
+            "$type": "IRIS.WellboreData.CasingElement, IRIS.WellboreData",
+            "BodyID": 0.635,
+            "BodyOD": 0.6604,
+            "Length": 265,
+            "TensileStrength": "NaN",
+            "TorsionalStrength": "NaN"
+          }
+        ],
+        "RoughnessHeight": 0.000015
+      },
+      {
+        "IsRiser": false,
+        "DepthInterval": {
+          "MaxX": 1055,
+          "MinX": 200
+        },
+        "CasingElements": [
+          {
+            "$type": "IRIS.WellboreData.CasingElement, IRIS.WellboreData",
+            "BodyID": 0.47545624999999997,
+            "BodyOD": 0.508,
+            "Length": 855,
+            "TensileStrength": "NaN",
+            "TorsionalStrength": "NaN"
+          }
+        ],
+        "RoughnessHeight": 0.000015
+      },
+      {
+        "IsRiser": false,
+        "DepthInterval": {
+          "MaxX": 1616,
+          "MinX": 200
+        },
+        "CasingElements": [
+          {
+            "$type": "IRIS.WellboreData.CasingElement, IRIS.WellboreData",
+            "BodyID": 0.31511875,
+            "BodyOD": 0.339725,
+            "Length": 1416,
+            "TensileStrength": "NaN",
+            "TorsionalStrength": "NaN"
+          }
+        ],
+        "RoughnessHeight": 0.000015
+      },
+      {
+        "IsRiser": false,
+        "DepthInterval": {
+          "MaxX": 2000,
+          "MinX": 200
+        },
+        "CasingElements": [
+          {
+            "$type": "IRIS.WellboreData.CasingElement, IRIS.WellboreData",
+            "BodyID": 0.2524125,
+            "BodyOD": 0.27305,
+            "Length": 1800,
+            "TensileStrength": "NaN",
+            "TorsionalStrength": "NaN"
+          }
+        ],
+        "RoughnessHeight": 0.000015
+      },
+      {
+        "IsRiser": false,
+        "DepthInterval": {
+          "MaxX": 2200,
+          "MinX": 1995
+        },
+        "CasingElements": [
+          {
+            "$type": "IRIS.WellboreData.CasingElement, IRIS.WellboreData",
+            "BodyID": 0.2286,
+            "BodyOD": 0.250825,
+            "Length": 205,
+            "TensileStrength": "NaN",
+            "TorsionalStrength": "NaN"
+          }
+        ],
+        "RoughnessHeight": 0.000015
+      }
+    ],
+    "SurfaceString": [
+      {
+        "$type": "IRIS.WellboreData.Riser, IRIS.WellboreData",
+        "BodyID": 0.4826,
+        "BodyOD": 0.5334,
+        "Length": 200,
+        "HasTelescopicJoint": false
+      },
+      {
+        "$type": "IRIS.WellboreData.BOP, IRIS.WellboreData",
+        "MaxOD": "NaN",
+        "MinOD": "NaN",
+        "Length": "NaN"
+      }
+    ],
+    "MPDChokePressureGaugeDepth": 26,
+    "WellHeadPressureGaugeDepth": 40
+  },
+  "DrillString": [
+    {
+      "$type": "IRIS.WellboreData.Bit, IRIS.WellboreData",
+      "DrillingEfficiencyFactor": 0.35,
+      "Length": 0.25,
+      "MakeupTorque": 0,
+      "Mass": 50,
+      "OD": 0.21589999999999998,
+      "NozzleDiameters": [
+        0.0127,
+        0.0127,
+        0.0127,
+        0.0127,
+        0.0127
+      ],
+      "ConnectionLength": "NaN",
+      "BitAggresivity": 0.1
+    },
+    {
+      "$type": "IRIS.WellboreData.SteerableRotaryTool, IRIS.WellboreData",
+      "BodyID": 0.0762,
+      "BodyOD": 0.17145,
+      "Length": 7.72,
+      "LinearWeight": 148,
+      "MakeUpTorque": 0,
+      "TensileStrength": "NaN",
+      "TorsionalStrength": 0
+    },
+    {
+      "$type": "IRIS.WellboreData.FloatSub, IRIS.WellboreData",
+      "BodyID": 0.0762,
+      "BodyOD": 0.17145,
+      "Length": 0.98,
+      "LinearWeight": 146,
+      "MakeUpTorque": 0,
+      "TensileStrength": "NaN",
+      "TorsionalStrength": 0
+    },
+    {
+      "$type": "IRIS.WellboreData.DrillCollar, IRIS.WellboreData",
+      "BodyID": 0.0762,
+      "BodyOD": 0.1397,
+      "Length": 1.98,
+      "LinearWeight": 84.5,
+      "MakeUpTorque": 0,
+      "TensileStrength": "NaN",
+      "TorsionalStrength": 0
+    },
+    {
+      "$type": "IRIS.WellboreData.LWD, IRIS.WellboreData",
+      "BodyID": 0.0762,
+      "BodyOD": 0.174625,
+      "Length": 6.36,
+      "LinearWeight": 134.6,
+      "MakeUpTorque": 0,
+      "TensileStrength": "NaN",
+      "TorsionalStrength": 0
+    },
+    {
+      "MakeUpTorque": 0,
+      "TurbineImpellerArea": 0,
+      "$type": "IRIS.WellboreData.MWD, IRIS.WellboreData",
+      "TensileStrength": "NaN",
+      "Length": 7.86,
+      "PressureLossConstant": 0,
+      "BodyOD": 0.174625,
+      "BodyID": 0.0762,
+      "TorsionalStrength": 0,
+      "LinearWeight": 139.6
+    },
+    {
+      "$type": "IRIS.WellboreData.DrillCollar, IRIS.WellboreData",
+      "BodyID": 0.0714375,
+      "BodyOD": 0.1651,
+      "Length": 28.82,
+      "LinearWeight": 145.7,
+      "MakeUpTorque": 0,
+      "TensileStrength": "NaN",
+      "TorsionalStrength": 0
+    },
+    {
+      "AverageJointLength": 10,
+      "MakeUpTorque": 0,
+      "$type": "IRIS.WellboreData.HWDP, IRIS.WellboreData",
+      "TensileStrength": 0,
+      "Length": 44.94,
+      "BodyOD": 0.127,
+      "ConnectionOD": 0.1524,
+      "PlasticCoatingThickness": 0,
+      "BodyID": 0.0762,
+      "ConnectionAngleExternal": 0.5235987755982988,
+      "TorsionalStrength": 0,
+      "ConnectionLength": 0.5,
+      "ConnectionID": 0.0762,
+      "LinearWeight": 76,
+      "ConnectionAngleInternal": 0.2617993877991494
+    },
+    {
+      "AverageJointLength": 10,
+      "MakeUpTorque": 0,
+      "$type": "IRIS.WellboreData.Jar, IRIS.WellboreData",
+      "TensileStrength": 0,
+      "Length": 9.42,
+      "BodyOD": 0.1651,
+      "ConnectionOD": 0.1651,
+      "PlasticCoatingThickness": 0,
+      "BodyID": 0.0635,
+      "ConnectionAngleExternal": 0.5235987755982988,
+      "TorsionalStrength": 0,
+      "ConnectionLength": 0.5,
+      "ConnectionID": 0.0635,
+      "LinearWeight": 139.7,
+      "ConnectionAngleInternal": 0.2617993877991494
+    },
+    {
+      "AverageJointLength": 10,
+      "MakeUpTorque": 0,
+      "$type": "IRIS.WellboreData.HWDP, IRIS.WellboreData",
+      "TensileStrength": 0,
+      "Length": 54,
+      "BodyOD": 0.127,
+      "ConnectionOD": 0.1524,
+      "PlasticCoatingThickness": 0,
+      "BodyID": 0.0762,
+      "ConnectionAngleExternal": 0.5235987755982988,
+      "TorsionalStrength": 0,
+      "ConnectionLength": 0.5,
+      "ConnectionID": 0.0762,
+      "LinearWeight": 76,
+      "ConnectionAngleInternal": 0.2617993877991494
+    },
+    {
+      "AverageJointLength": 10,
+      "MakeUpTorque": 0,
+      "$type": "IRIS.WellboreData.DrillPipe, IRIS.WellboreData",
+      "TensileStrength": 0,
+      "Length": 500,
+      "BodyOD": 0.127,
+      "ConnectionOD": 0.1524,
+      "PlasticCoatingThickness": 0,
+      "BodyID": 0.10874375,
+      "ConnectionAngleExternal": 0.5235987755982988,
+      "TorsionalStrength": 0,
+      "ConnectionLength": 0.5,
+      "ConnectionID": 0.1016,
+      "Grade": "S135",
+      "Class": "II",
+      "LinearWeight": 33,
+      "ConnectionAngleInternal": 0.2617993877991494
+    },
+    {
+      "AverageJointLength": 10,
+      "MakeUpTorque": 0,
+      "$type": "IRIS.WellboreData.DrillPipe, IRIS.WellboreData",
+      "TensileStrength": 0,
+      "Length": 3585,
+      "BodyOD": 0.127,
+      "ConnectionOD": 0.1524,
+      "PlasticCoatingThickness": 0,
+      "BodyID": 0.10874375,
+      "ConnectionAngleExternal": 0.5235987755982988,
+      "TorsionalStrength": 0,
+      "ConnectionLength": 0.5,
+      "ConnectionID": 0.1016,
+      "Grade": "S135",
+      "Class": "II",
+      "LinearWeight": 33,
+      "ConnectionAngleInternal": 0.2617993877991494
+    }
+  ],
+  "Fluids": [
+    {
+      "FluidReports": [
+        {
+          "Density": 1649.9999999999998,
+          "DensityT": 323.15,
+          "OilWaterRatio": 3,
+          "GelStrength10s": 6,
+          "RheometerInputs": [
+            {
+              "Temperature": 323.15,
+              "Viscosity60RPM": 7.66026735,
+              "Viscosity600RPM": 37.7746925,
+              "Viscosity30RPM": 5.553694,
+              "Viscosity300RPM": 21.9753914,
+              "Pressure": 101325,
+              "Viscosity100RPM": 10.341361,
+              "Viscosity200RPM": 16.3259449,
+              "Viscosity3RPM": 3.54287362,
+              "Viscosity6RPM": 3.78225684
+            }
+          ],
+          "FannDataTypeName": "GenericOilBased",
+          "GelStrength10min": 9
+        }
+      ],
+      "BariteDensity": 4200,
+      "ThermalConductivity": 0.44,
+      "CuttingsDiameter": 0.005,
+      "SpecificHeat": 1774,
+      "Name": "Generic OBM 1",
+      "CuttingsDensity": 2400,
+      "BaseOilDensity": 790.0009987437186,
+      "OilDensityModel": "PvtTable",
+      "OilPVTTable": {
+        "Table": {
+          "Data": [
+            818.9999999999999,
+            828.9999999999999,
+            838,
+            847,
+            856,
+            864,
+            870,
+            809,
+            819.9999999999999,
+            829.9999999999999,
+            840,
+            848,
+            856,
+            864,
+            790,
+            805,
+            814.9999999999999,
+            825.9999999999999,
+            836,
+            845,
+            852,
+            775,
+            788,
+            803,
+            814.9999999999999,
+            824.9999999999999,
+            835,
+            842,
+            758,
+            775,
+            789,
+            803,
+            814.9999999999999,
+            823.9999999999999,
+            832,
+            744,
+            761,
+            776,
+            791,
+            803,
+            813.9999999999999,
+            821.9999999999999,
+            727,
+            746,
+            765,
+            779,
+            793,
+            803,
+            812,
+            712,
+            733,
+            751,
+            767,
+            782,
+            793,
+            802,
+            695.9999999999999,
+            718,
+            738,
+            754,
+            770,
+            782,
+            791
+          ],
+          "Rows": [
+            277.15,
+            293.15,
+            323.15,
+            348.15,
+            373.15,
+            398.15,
+            423.15,
+            448.15,
+            473.15
+          ],
+          "Columns": [
+            99999.99999999999,
+            20000000,
+            40000000,
+            59999999.99999999,
+            80000000,
+            99999999.99999999,
+            119999999.99999999
+          ]
+        }
+      },
+      "BaseWaterDensity": 989.8413718612896
+    },
+    {
+      "FluidReports": [
+        {
+          "Density": 1700,
+          "DensityT": 323.15,
+          "OilWaterRatio": 0,
+          "GelStrength10s": 2.9,
+          "RheometerInputs": [
+            {
+              "Temperature": 323.15,
+              "Viscosity60RPM": 10.4857769,
+              "Viscosity600RPM": 29.1590786,
+              "Viscosity30RPM": 7.900243,
+              "Viscosity300RPM": 21.1630745,
+              "Pressure": 101325,
+              "Viscosity100RPM": 13.07131,
+              "Viscosity200RPM": 17.6678162,
+              "Viscosity3RPM": 4.069822,
+              "Viscosity6RPM": 4.936455
+            }
+          ],
+          "FannDataTypeName": "GenericWaterBased",
+          "GelStrength10min": 3.4
+        }
+      ],
+      "BariteDensity": 4200,
+      "ThermalConductivity": 0.77,
+      "CuttingsDiameter": 0.005,
+      "SpecificHeat": 2791,
+      "Name": "Generic WBM",
+      "CuttingsDensity": 2400,
+      "BaseOilDensity": 790,
+      "OilDensityModel": "Glaso",
+      "OilPVTTable": {
+        "Table": {
+          "Data": [],
+          "Rows": [],
+          "Columns": []
+        }
+      },
+      "BaseWaterDensity": 989.8413718612896
+    }
+  ],
+  "Formation": {
+    "Porosity": 0.02,
+    "H2OFraction": 0,
+    "Permeability": 10,
+    "HCgasFraction": 1
+  },
+  "FormationStrength": [
+    {
+      "MD": 0,
+      "UCS": 50000000,
+      "InternalFrictionAngle": 0.5236
+    },
+    {
+      "MD": 2502,
+      "UCS": 100000000,
+      "InternalFrictionAngle": 0.5236
+    },
+    {
+      "MD": 2503,
+      "UCS": 150000000,
+      "InternalFrictionAngle": 0.5236
+    },
+    {
+      "MD": 2506,
+      "UCS": 200000000,
+      "InternalFrictionAngle": 0.5236
+    },
+    {
+      "MD": 2507,
+      "UCS": 150000000,
+      "InternalFrictionAngle": 0.5236
+    },
+    {
+      "MD": 2508,
+      "UCS": 100000000,
+      "InternalFrictionAngle": 0.5236
+    }
+  ],
+  "GeoPressure": [
+    {
+      "TVD": 400,
+      "PorePressureInEMW": 800,
+      "FracturationPressureInEMW": 1179
+    },
+    {
+      "TVD": 500,
+      "PorePressureInEMW": 850,
+      "FracturationPressureInEMW": 1270.9999999999998
+    },
+    {
+      "TVD": 600,
+      "PorePressureInEMW": 879.9999999999998,
+      "FracturationPressureInEMW": 1329
+    },
+    {
+      "TVD": 700,
+      "PorePressureInEMW": 910,
+      "FracturationPressureInEMW": 1379
+    },
+    {
+      "TVD": 800,
+      "PorePressureInEMW": 930,
+      "FracturationPressureInEMW": 1418
+    },
+    {
+      "TVD": 900,
+      "PorePressureInEMW": 945,
+      "FracturationPressureInEMW": 1448.0000000000002
+    },
+    {
+      "TVD": 1000,
+      "PorePressureInEMW": 951.9999999999999,
+      "FracturationPressureInEMW": 1456
+    },
+    {
+      "TVD": 1100,
+      "PorePressureInEMW": 960,
+      "FracturationPressureInEMW": 1464
+    },
+    {
+      "TVD": 1200,
+      "PorePressureInEMW": 967.9999999999998,
+      "FracturationPressureInEMW": 1472
+    },
+    {
+      "TVD": 1300,
+      "PorePressureInEMW": 975.0000000000002,
+      "FracturationPressureInEMW": 1483.0000000000002
+    },
+    {
+      "TVD": 1400,
+      "PorePressureInEMW": 980,
+      "FracturationPressureInEMW": 1492
+    },
+    {
+      "TVD": 1430,
+      "PorePressureInEMW": 982.0000000000002,
+      "FracturationPressureInEMW": 1494.0000000000005
+    },
+    {
+      "TVD": 1450,
+      "PorePressureInEMW": 990,
+      "FracturationPressureInEMW": 1498
+    },
+    {
+      "TVD": 1470,
+      "PorePressureInEMW": 1000,
+      "FracturationPressureInEMW": 1504.9999999999995
+    },
+    {
+      "TVD": 1490,
+      "PorePressureInEMW": 1030,
+      "FracturationPressureInEMW": 1522
+    },
+    {
+      "TVD": 1500,
+      "PorePressureInEMW": 1040,
+      "FracturationPressureInEMW": 1528
+    },
+    {
+      "TVD": 1580,
+      "PorePressureInEMW": 1220,
+      "FracturationPressureInEMW": 1629.9999999999993
+    },
+    {
+      "TVD": 1635,
+      "PorePressureInEMW": 1350,
+      "FracturationPressureInEMW": 1700
+    },
+    {
+      "TVD": 1700,
+      "PorePressureInEMW": 1454.9999999999998,
+      "FracturationPressureInEMW": 1759.9999999999993
+    },
+    {
+      "TVD": 1760,
+      "PorePressureInEMW": 1560,
+      "FracturationPressureInEMW": 1818
+    },
+    {
+      "TVD": 1800,
+      "PorePressureInEMW": 1590,
+      "FracturationPressureInEMW": 1836.0000000000011
+    },
+    {
+      "TVD": 1850,
+      "PorePressureInEMW": 1620,
+      "FracturationPressureInEMW": 1858
+    },
+    {
+      "TVD": 1900,
+      "PorePressureInEMW": 1377.9999999999998,
+      "FracturationPressureInEMW": 1873
+    },
+    {
+      "TVD": 1915.02,
+      "PorePressureInEMW": 1377.9999999999998,
+      "FracturationPressureInEMW": 1794.0000000000002
+    },
+    {
+      "TVD": 1927,
+      "PorePressureInEMW": 1374,
+      "FracturationPressureInEMW": 1827.0000000000005
+    },
+    {
+      "TVD": 1937,
+      "PorePressureInEMW": 1318,
+      "FracturationPressureInEMW": 1793
+    },
+    {
+      "TVD": 1967.01,
+      "PorePressureInEMW": 1310,
+      "FracturationPressureInEMW": 1856.9999999999998
+    },
+    {
+      "TVD": 1977.01,
+      "PorePressureInEMW": 1306.9999999999989,
+      "FracturationPressureInEMW": 1877.9999999999993
+    },
+    {
+      "TVD": 1993,
+      "PorePressureInEMW": 1405.0000000000002,
+      "FracturationPressureInEMW": 1953.0000000000005
+    },
+    {
+      "TVD": 1999.01,
+      "PorePressureInEMW": 1402.9999999999993,
+      "FracturationPressureInEMW": 1958
+    },
+    {
+      "TVD": 2028.01,
+      "PorePressureInEMW": 1395.9999999999993,
+      "FracturationPressureInEMW": 1961
+    },
+    {
+      "TVD": 2046,
+      "PorePressureInEMW": 1368,
+      "FracturationPressureInEMW": 1963.0000000000002
+    },
+    {
+      "TVD": 2058,
+      "PorePressureInEMW": 1366.9999999999998,
+      "FracturationPressureInEMW": 1965
+    },
+    {
+      "TVD": 2070,
+      "PorePressureInEMW": 1365,
+      "FracturationPressureInEMW": 1966
+    },
+    {
+      "TVD": 2085.01,
+      "PorePressureInEMW": 1362,
+      "FracturationPressureInEMW": 1968
+    },
+    {
+      "TVD": 2106,
+      "PorePressureInEMW": 1359,
+      "FracturationPressureInEMW": 1970
+    },
+    {
+      "TVD": 2120,
+      "PorePressureInEMW": 1359.0000000000002,
+      "FracturationPressureInEMW": 1970
+    },
+    {
+      "TVD": 2153,
+      "PorePressureInEMW": 1565.9999999999998,
+      "FracturationPressureInEMW": 1974.9999999999995
+    },
+    {
+      "TVD": 2190,
+      "PorePressureInEMW": 1566,
+      "FracturationPressureInEMW": 1974.999999999999
+    },
+    {
+      "TVD": 2300,
+      "PorePressureInEMW": 1566,
+      "FracturationPressureInEMW": 1975.0000000000005
+    },
+    {
+      "TVD": 2350,
+      "PorePressureInEMW": 1566,
+      "FracturationPressureInEMW": 1975
+    },
+    {
+      "TVD": 2400,
+      "PorePressureInEMW": 1566,
+      "FracturationPressureInEMW": 1975
+    }
+  ],
+  "GeoThermal": [
+    {
+      "TVD": 0,
+      "Type": "Air",
+      "Density": 1.293,
+      "SpecificHeat": 1005,
+      "GeothermalGradient": 0,
+      "ThermalConductivity": 0.0243
+    },
+    {
+      "TVD": 40,
+      "Type": "Water",
+      "Density": 1000,
+      "SpecificHeat": 3985,
+      "GeothermalGradient": -0.02,
+      "ThermalConductivity": 0.563
+    },
+    {
+      "TVD": 200,
+      "Type": "Solid",
+      "Density": 2700,
+      "SpecificHeat": 2640,
+      "GeothermalGradient": 0.03,
+      "ThermalConductivity": 2.7
+    },
+    {
+      "TVD": 730,
+      "Type": "Solid",
+      "Density": 2700,
+      "SpecificHeat": 2640,
+      "GeothermalGradient": 0.03,
+      "ThermalConductivity": 2.7
+    },
+    {
+      "TVD": 930,
+      "Type": "Solid",
+      "Density": 2700,
+      "SpecificHeat": 2640,
+      "GeothermalGradient": 0.03,
+      "ThermalConductivity": 2.7
+    },
+    {
+      "TVD": 980,
+      "Type": "Solid",
+      "Density": 2700,
+      "SpecificHeat": 2640,
+      "GeothermalGradient": 0.03,
+      "ThermalConductivity": 2.7
+    },
+    {
+      "TVD": 1150,
+      "Type": "Solid",
+      "Density": 2700,
+      "SpecificHeat": 2640,
+      "GeothermalGradient": 0.03,
+      "ThermalConductivity": 2.7
+    },
+    {
+      "TVD": 1400,
+      "Type": "Solid",
+      "Density": 2700,
+      "SpecificHeat": 2640,
+      "GeothermalGradient": 0.03,
+      "ThermalConductivity": 2.7
+    },
+    {
+      "TVD": 1632,
+      "Type": "Solid",
+      "Density": 2700,
+      "SpecificHeat": 2640,
+      "GeothermalGradient": 0.045,
+      "ThermalConductivity": 2.7
+    },
+    {
+      "TVD": 1741,
+      "Type": "Solid",
+      "Density": 2700,
+      "SpecificHeat": 2640,
+      "GeothermalGradient": 0.045,
+      "ThermalConductivity": 2.7
+    },
+    {
+      "TVD": 1872,
+      "Type": "Solid",
+      "Density": 2700,
+      "SpecificHeat": 2640,
+      "GeothermalGradient": 0.045,
+      "ThermalConductivity": 2.7
+    },
+    {
+      "TVD": 1936,
+      "Type": "Solid",
+      "Density": 2700,
+      "SpecificHeat": 2640,
+      "GeothermalGradient": 0.045,
+      "ThermalConductivity": 2.7
+    },
+    {
+      "TVD": 2138,
+      "Type": "Solid",
+      "Density": 2700,
+      "SpecificHeat": 2640,
+      "GeothermalGradient": 0.045,
+      "ThermalConductivity": 2.7
+    },
+    {
+      "TVD": 2800,
+      "Type": "Solid",
+      "Density": 2700,
+      "SpecificHeat": 2640,
+      "GeothermalGradient": 0.03,
+      "ThermalConductivity": 2.7
+    },
+    {
+      "TVD": 3200,
+      "Type": "Solid",
+      "Density": 2700,
+      "SpecificHeat": 2640,
+      "GeothermalGradient": 0.03,
+      "ThermalConductivity": 2.7
+    },
+    {
+      "TVD": 3300,
+      "Type": "Solid",
+      "Density": 2700,
+      "SpecificHeat": 2640,
+      "GeothermalGradient": 0.03,
+      "ThermalConductivity": 2.7
+    }
+  ],
+  "Rig": {
+    "TopDriveMomentOfInertia": "NaN",
+    "DrawworksHookLoadSystematicCorrection": 1,
+    "DisregardDensityAfterMudPump": false,
+    "ConvolutionCutoffForLowPassFilterDensityFromPit": 0,
+    "MinFlowRateForActiveDensityAfterMudPump": 0,
+    "TopDriveRotorResistance": "NaN",
+    "MaxHookPosition": 3.975,
+    "MaxDensityVariationTolerance": "NaN",
+    "MudReturnLineToPits": {
+      "Dip": 0.09024378990978545,
+      "DensityIn": "NaN",
+      "VolumeFlowRateIn": 0,
+      "Size": 1,
+      "Length": 20,
+      "WaterMassFractionIn": 1,
+      "OilMassFractionIn": 0,
+      "VolumeFlowRateOut": 0,
+      "ActualMaxVelocity": 0,
+      "TimeStep": 1,
+      "TemperatureIn": 273.15,
+      "WaterMassFractionOut": 1,
+      "CuttingsMassFractionIn": 0,
+      "LowGravitySolidMassFractionIn": 0,
+      "TemperatureOut": "NaN",
+      "DensityOut": "NaN",
+      "OilMassFractionOut": 0,
+      "DipAngle": 0.09,
+      "Type": "SemiCylindrical",
+      "Time": 0,
+      "LowGravitySolidMassFractionOut": 0,
+      "GasMassFractionOut": 0,
+      "GasMassFractionIn": 0,
+      "MassFlowRateOut": 0,
+      "HighGravitySolidMassFractionIn": 0,
+      "HighGravitySolidMassFractionOut": 0,
+      "CuttingsMassFractionOut": 0,
+      "Roughness": 0.1,
+      "MassFlowRateIn": 0
+    },
+    "DrawworksRotorImpedance": "NaN",
+    "Tanks": {
+      "TankItems": [
+        {
+          "TankID": -2147483648,
+          "ThermalConductivityFloor": 0,
+          "Wall1ConnectionID": -2147483648,
+          "Wall3ConnectionID": -2147483648,
+          "ThermalConductivityWall1": 0,
+          "Wall1ConnectionWall": -2147483648,
+          "HeatCapacityWall1": 0,
+          "VolumeFlowRateIn": "NaN",
+          "MudVolume": 30,
+          "Length": 0,
+          "ThicknessWall1": 0,
+          "PitTemperature": "NaN",
+          "HeatCapacityWall3": 0,
+          "TankType": "Drilling",
+          "VolumeFlowRateOut": "NaN",
+          "ThicknessWall4": 0,
+          "Wall4ConnectionID": -2147483648,
+          "DensityFloor": 0,
+          "TimeStep": 1,
+          "TemperatureIn": "NaN",
+          "Wall4ConnectionWall": -2147483648,
+          "ThicknessFloor": 0,
+          "ThicknessWall3": 0,
+          "MaxVolume": 40,
+          "DensityWall3": 0,
+          "ThermalConductivityWall2": 0,
+          "HeatCapacityWall2": 0,
+          "Wall2ConnectionWall": -2147483648,
+          "ThicknessWall2": 0,
+          "ThermalConductivityWall3": 0,
+          "AirTemperature": "NaN",
+          "DensityOut": "NaN",
+          "DensityWall4": 0,
+          "Name": "MainPit",
+          "Width": 0,
+          "Wall3ConnectionWall": -2147483648,
+          "MudLevel": "NaN",
+          "Wall2ConnectionID": -2147483648,
+          "DensityWall2": 0,
+          "DensityWall1": 0,
+          "HeatCapacityFloor": 0,
+          "Height": 0,
+          "HeatCapacityWall4": 0,
+          "ThermalConductivityWall4": 0
+        },
+        {
+          "TankID": -2147483648,
+          "ThermalConductivityFloor": 0,
+          "Wall1ConnectionID": -2147483648,
+          "Wall3ConnectionID": -2147483648,
+          "ThermalConductivityWall1": 0,
+          "Wall1ConnectionWall": -2147483648,
+          "HeatCapacityWall1": 0,
+          "VolumeFlowRateIn": "NaN",
+          "MudVolume": 20,
+          "Length": 0,
+          "ThicknessWall1": 0,
+          "PitTemperature": "NaN",
+          "HeatCapacityWall3": 0,
+          "TankType": "Drilling",
+          "VolumeFlowRateOut": "NaN",
+          "ThicknessWall4": 0,
+          "Wall4ConnectionID": -2147483648,
+          "DensityFloor": 0,
+          "TimeStep": 1,
+          "TemperatureIn": "NaN",
+          "Wall4ConnectionWall": -2147483648,
+          "ThicknessFloor": 0,
+          "ThicknessWall3": 0,
+          "MaxVolume": 30,
+          "DensityWall3": 0,
+          "ThermalConductivityWall2": 0,
+          "HeatCapacityWall2": 0,
+          "Wall2ConnectionWall": -2147483648,
+          "ThicknessWall2": 0,
+          "ThermalConductivityWall3": 0,
+          "AirTemperature": "NaN",
+          "DensityOut": "NaN",
+          "DensityWall4": 0,
+          "Name": "ReservePit",
+          "Width": 0,
+          "Wall3ConnectionWall": -2147483648,
+          "MudLevel": "NaN",
+          "Wall2ConnectionID": -2147483648,
+          "DensityWall2": 0,
+          "DensityWall1": 0,
+          "HeatCapacityFloor": 0,
+          "Height": 0,
+          "HeatCapacityWall4": 0,
+          "ThermalConductivityWall4": 0
+        }
+      ]
+    },
+    "TopDriveLength": "NaN",
+    "MudReturnLineToShakers": {
+      "Dip": 0.05004170837553879,
+      "DensityIn": "NaN",
+      "VolumeFlowRateIn": 0,
+      "Size": 1,
+      "Length": 30,
+      "WaterMassFractionIn": 1,
+      "OilMassFractionIn": 0,
+      "VolumeFlowRateOut": 0,
+      "ActualMaxVelocity": 0,
+      "TimeStep": 1,
+      "TemperatureIn": 273.15,
+      "WaterMassFractionOut": 1,
+      "CuttingsMassFractionIn": 0,
+      "LowGravitySolidMassFractionIn": 0,
+      "TemperatureOut": "NaN",
+      "DensityOut": "NaN",
+      "OilMassFractionOut": 0,
+      "DipAngle": 0.05,
+      "Type": "SemiCylindrical",
+      "Time": 0,
+      "LowGravitySolidMassFractionOut": 0,
+      "GasMassFractionOut": 0,
+      "GasMassFractionIn": 0,
+      "MassFlowRateOut": 0,
+      "HighGravitySolidMassFractionIn": 0,
+      "HighGravitySolidMassFractionOut": 0,
+      "CuttingsMassFractionOut": 0,
+      "Roughness": 0.1,
+      "MassFlowRateIn": 0
+    },
+    "MaxRotaryAcceleration": 0.1,
+    "TopDriveRotorVoltage": "NaN",
+    "DrawworksMotorMaxTorque": "NaN",
+    "ConvolutionSizeForLowPassFilterDensityFromPit": 0,
+    "TopDriveWeight": "NaN",
+    "Pumps": {
+      "PumpItems": [
+        {
+          "MaxPumpRateAccelerationAcceleration": "NaN",
+          "PumpPosition": "NaN",
+          "MaxPumpRateDecelerationDeceleration": "NaN",
+          "LiftPumpPipeLengthVertical": "NaN",
+          "MaxAcceleration": 0.00166667,
+          "StrokeVolume": 0.0228,
+          "FunctionType": "Main",
+          "Efficiency": 0.97,
+          "PumpFunctionType": "Main",
+          "MinFlowRate": 0.00335,
+          "Omega": 1,
+          "PumpPipeLength": "NaN",
+          "MaxPumpEfficiencyPressureProportion": 0.9,
+          "MinPumpRate": "NaN",
+          "LiftPumpPipeLengthHorizontalOffset": "NaN",
+          "Tau": 0.5,
+          "MaxPumpPressure": 27999999.999999996,
+          "PumpPipeOD": "NaN",
+          "PumpPipeID": "NaN",
+          "MaxPumpRateAcceleration": "NaN",
+          "UsePressureValue": true,
+          "MaxPumpRate": 3.918731536745644,
+          "Name": "Main pump",
+          "PumpRateAccuracy": "NaN",
+          "MaxPumpRateDeceleration": "NaN",
+          "MaxFlowRate": 0.08666666666666667,
+          "LiftPumpPipeLengthHorizontalStepBack": "NaN",
+          "MinPumpEfficiencyPressureProportion": 0.1,
+          "UseTemperatureValue": true,
+          "PumpType": "Unknown"
+        },
+        {
+          "MaxPumpRateAccelerationAcceleration": "NaN",
+          "PumpPosition": 0,
+          "MaxPumpRateDecelerationDeceleration": "NaN",
+          "LiftPumpPipeLengthVertical": "NaN",
+          "MaxAcceleration": 0.00166667,
+          "StrokeVolume": "NaN",
+          "FunctionType": "Choke",
+          "MeasurePoints": {
+            "MeasurePoints": []
+          },
+          "Efficiency": "NaN",
+          "PumpFunctionType": "Choke",
+          "MinFlowRate": "NaN",
+          "Omega": 1,
+          "PumpPipeLength": 5,
+          "MaxPumpEfficiencyPressureProportion": 0.9,
+          "MinPumpRate": "NaN",
+          "LiftPumpPipeLengthHorizontalOffset": "NaN",
+          "Tau": 0.5,
+          "MaxPumpPressure": "NaN",
+          "PumpPipeOD": 0.12,
+          "PumpPipeID": 0.1,
+          "MaxPumpRateAcceleration": "NaN",
+          "UsePressureValue": false,
+          "MaxPumpRate": "NaN",
+          "Name": "MPD pump",
+          "PumpRateAccuracy": "NaN",
+          "MaxPumpRateDeceleration": "NaN",
+          "MaxFlowRate": "NaN",
+          "LiftPumpPipeLengthHorizontalStepBack": "NaN",
+          "MinPumpEfficiencyPressureProportion": 0.1,
+          "UseTemperatureValue": true,
+          "PumpType": "Unknown"
+        }
+      ]
+    },
+    "Chokes": {
+      "ChokeItems": [
+        {
+          "MaxRateOfChange": 0.05,
+          "ChokeConstant": 1.975,
+          "FunctionType": "Main",
+          "ChokePipeLength": 1,
+          "ChokePipeOD": 0.1,
+          "ChokePosition": 0,
+          "ChokeFunctionType": "Main",
+          "ChokeOpeningDiameter": 0.0762,
+          "ChokeCharacteristicFunction": [
+            {
+              "Left": 0,
+              "Right": 0
+            },
+            {
+              "Left": 0.1,
+              "Right": 0.1
+            },
+            {
+              "Left": 0.2,
+              "Right": 0.2
+            },
+            {
+              "Left": 0.3,
+              "Right": 0.3
+            },
+            {
+              "Left": 0.4,
+              "Right": 0.4
+            },
+            {
+              "Left": 0.5,
+              "Right": 0.5
+            },
+            {
+              "Left": 0.6,
+              "Right": 0.6
+            },
+            {
+              "Left": 0.7,
+              "Right": 0.7
+            },
+            {
+              "Left": 0.8,
+              "Right": 0.8
+            },
+            {
+              "Left": 0.9,
+              "Right": 0.9
+            },
+            {
+              "Left": 1,
+              "Right": 1
+            }
+          ],
+          "Name": "MPD choke",
+          "ChokePipeID": 0.0762
+        },
+        {
+          "MaxRateOfChange": 0.05,
+          "ChokeConstant": "NaN",
+          "FunctionType": "BOP",
+          "MeasurePoints": {
+            "MeasurePoints": []
+          },
+          "ChokePipeLength": "NaN",
+          "ChokePipeOD": "NaN",
+          "ChokePosition": 200,
+          "ChokeFunctionType": "BOP",
+          "ChokeOpeningDiameter": "NaN",
+          "ChokeCharacteristicFunction": [],
+          "Name": "BOP",
+          "ChokePipeID": "NaN"
+        }
+      ]
+    },
+    "DistanceTopDriveHangingPointToTravellingBlockAxle": "NaN",
+    "ConvolutionCutoffForLowPassFilterDensityBeforeMudPump": 0,
+    "DrawworksNumberOfMotors": 8,
+    "MaxHookSpeed": 1.2,
+    "ShaleShaker": {
+      "ROP": 0,
+      "VolumeFlowRateIn": "NaN",
+      "MudLossProportion": 0,
+      "WaterMassFractionIn": 1,
+      "OilMassFractionIn": 0,
+      "VolumeFlowRateOut": "NaN",
+      "TemperatureIn": "NaN",
+      "WaterMassFractionOut": 1,
+      "CuttingsMassFractionIn": 0,
+      "LowGravitySolidMassFractionIn": 0,
+      "TemperatureOut": "NaN",
+      "DensityOut": "NaN",
+      "OilMassFractionOut": 0,
+      "LowGravitySolidMassFractionOut": 0,
+      "GasMassFractionOut": 0,
+      "GasMassFractionIn": 0,
+      "MassFlowRateOut": "NaN",
+      "CuttingsProportion": "NaN",
+      "HighGravitySolidMassFractionIn": 0,
+      "HighGravitySolidMassFractionOut": 0,
+      "HoleSize": 0,
+      "CuttingsMassFractionOut": 0,
+      "MassFlowRateIn": "NaN"
+    },
+    "DrawworksGearFactor": "NaN",
+    "TopDriveFreeRotateRPM": "NaN",
+    "TopDriveFreeRotateTorqueThreshold": "NaN",
+    "TopDriveTorqueGradientForPressure": 0,
+    "DrawworksRotorVoltage": "NaN",
+    "CorrectionForDensityAfterMudPump": {
+      "A": 1,
+      "B": 0,
+      "Degree": 1
+    },
+    "CorrectionForDensityBeforeMudPump": {
+      "A": 1,
+      "B": 0,
+      "Degree": 1
+    },
+    "DefaultAirTemperature": 283.15,
+    "TopDriveTorqueGradientForAxialLoad": 0,
+    "InSlipsDetectionMargin": 3000,
+    "ElevatorAndBailArmsWeight": "NaN",
+    "DisregardDensityfromPit": false,
+    "MaxHookAcceleration": 0.3,
+    "DollyWeight": "NaN",
+    "TopDriveTorqueBias": 0,
+    "TopDriveTorqueGradientForChurning": 0,
+    "Name": "",
+    "TopDriveMotorMaxTorque": "NaN",
+    "ConvolutionCutoffForLowPassFilterDensityAfterMudPump": 0,
+    "CorrectionForDensityFromPit": {
+      "A": 1,
+      "B": 0,
+      "Degree": 1
+    },
+    "DrawworksRotorResistance": "NaN",
+    "DisregardDensityBeforeMudPump": false,
+    "TopDriveRotorImpedance": "NaN",
+    "TravellingBlockWeight": 20000,
+    "MinHookPosition": 32.306,
+    "DrawworksSpoolRadius": "NaN",
+    "ConvolutionSizeForLowPassFilterDensityAfterMudPump": 0,
+    "RigType": "SemiSubmersible",
+    "DrawworksHookLoadTareCorrection": 0,
+    "TopDriveGearFactor": "NaN",
+    "ConvolutionSizeForLowPassFilterDensityBeforeMudPump": 0,
+    "CrownBlockHeight": 50,
+    "OffBottomAccuracy": 0.1,
+    "MinFlowRateForActiveDensityBeforeMudPump": 0,
+    "TopDriveNumberOfMotors": 3
+  },
+  "Trajectory": [
+    {
+      "Az": 0,
+      "MD": 0,
+      "Incl": 0
+    },
+    {
+      "Az": 0,
+      "MD": 43.5,
+      "Incl": 0
+    },
+    {
+      "Az": 0.7086036763096978,
+      "MD": 152,
+      "Incl": 0
+    },
+    {
+      "Az": 6.283185307179586,
+      "MD": 291,
+      "Incl": 0
+    },
+    {
+      "Az": 3.148050371822172,
+      "MD": 301,
+      "Incl": 0.00471238898038469
+    },
+    {
+      "Az": 3.0497883349348918,
+      "MD": 311,
+      "Incl": 0.005061454830783556
+    },
+    {
+      "Az": 3.017674276698196,
+      "MD": 321,
+      "Incl": 0.0041887902047863905
+    },
+    {
+      "Az": 3.362027738116677,
+      "MD": 331,
+      "Incl": 0.0029670597283903604
+    },
+    {
+      "Az": 4.061381169390804,
+      "MD": 341,
+      "Incl": 0.0029670597283903604
+    },
+    {
+      "Az": 4.048116667075647,
+      "MD": 351,
+      "Incl": 0.0033161255787892262
+    },
+    {
+      "Az": 3.4156093461529027,
+      "MD": 361,
+      "Incl": 0.004363323129985824
+    },
+    {
+      "Az": 3.3892548744477886,
+      "MD": 371,
+      "Incl": 0.0022689280275926286
+    },
+    {
+      "Az": 5.401095903221652,
+      "MD": 381,
+      "Incl": 0.0017453292519943296
+    },
+    {
+      "Az": 5.0354494249288395,
+      "MD": 391,
+      "Incl": 0.0020943951023931952
+    },
+    {
+      "Az": 4.344997172839883,
+      "MD": 401,
+      "Incl": 0.0024434609527920616
+    },
+    {
+      "Az": 3.7430331138270394,
+      "MD": 411,
+      "Incl": 0.004363323129985824
+    },
+    {
+      "Az": 3.3831462220658084,
+      "MD": 421,
+      "Incl": 0.006806784082777885
+    },
+    {
+      "Az": 3.0307642460881534,
+      "MD": 431,
+      "Incl": 0.005759586531581287
+    },
+    {
+      "Az": 2.0210912738094335,
+      "MD": 441,
+      "Incl": 0.004014257279586958
+    },
+    {
+      "Az": 1.3582152239019871,
+      "MD": 451,
+      "Incl": 0.006457718232379019
+    },
+    {
+      "Az": 1.2665854381722847,
+      "MD": 461,
+      "Incl": 0.006806784082777885
+    },
+    {
+      "Az": 1.6706291600089722,
+      "MD": 471,
+      "Incl": 0.003490658503988659
+    },
+    {
+      "Az": 2.843315884423962,
+      "MD": 481,
+      "Incl": 0.003490658503988659
+    },
+    {
+      "Az": 2.7021187479376207,
+      "MD": 491,
+      "Incl": 0.0054105206811824215
+    },
+    {
+      "Az": 2.6056020403023346,
+      "MD": 501,
+      "Incl": 0.004537856055185257
+    },
+    {
+      "Az": 2.6696556238505265,
+      "MD": 511,
+      "Incl": 0.004014257279586958
+    },
+    {
+      "Az": 2.5375341994745555,
+      "MD": 521,
+      "Incl": 0.006457718232379019
+    },
+    {
+      "Az": 2.546435378659727,
+      "MD": 531,
+      "Incl": 0.00767944870877505
+    },
+    {
+      "Az": 2.5150194521238287,
+      "MD": 541,
+      "Incl": 0.006806784082777885
+    },
+    {
+      "Az": 2.3390902635228006,
+      "MD": 551,
+      "Incl": 0.00471238898038469
+    },
+    {
+      "Az": 2.5148449191986293,
+      "MD": 561,
+      "Incl": 0.0033161255787892262
+    },
+    {
+      "Az": 2.3745204473382855,
+      "MD": 571,
+      "Incl": 0.005585053606381855
+    },
+    {
+      "Az": 2.266659099565036,
+      "MD": 581,
+      "Incl": 0.008028514559173916
+    },
+    {
+      "Az": 2.428102055374511,
+      "MD": 591,
+      "Incl": 0.007504915783575617
+    },
+    {
+      "Az": 2.475225945178358,
+      "MD": 601,
+      "Incl": 0.008377580409572781
+    },
+    {
+      "Az": 2.362652208424724,
+      "MD": 611,
+      "Incl": 0.00942477796076938
+    },
+    {
+      "Az": 2.2265165267691662,
+      "MD": 621,
+      "Incl": 0.008203047484373348
+    },
+    {
+      "Az": 2.144486051925433,
+      "MD": 631,
+      "Incl": 0.006806784082777885
+    },
+    {
+      "Az": 2.2537436631002774,
+      "MD": 641.01,
+      "Incl": 0.006806784082777885
+    },
+    {
+      "Az": 2.507689069265453,
+      "MD": 651.01,
+      "Incl": 0.00767944870877505
+    },
+    {
+      "Az": 2.658136450787364,
+      "MD": 661.01,
+      "Incl": 0.009599310885968814
+    },
+    {
+      "Az": 2.8221974004748307,
+      "MD": 671.01,
+      "Incl": 0.012391837689159739
+    },
+    {
+      "Az": 3.1405454560385966,
+      "MD": 681.01,
+      "Incl": 0.015009831567151233
+    },
+    {
+      "Az": 3.5545375546116516,
+      "MD": 691.01,
+      "Incl": 0.020594885173533087
+    },
+    {
+      "Az": 3.8048177693476384,
+      "MD": 701.01,
+      "Incl": 0.03246312408709453
+    },
+    {
+      "Az": 3.883357585687383,
+      "MD": 711.02,
+      "Incl": 0.04537856055185257
+    },
+    {
+      "Az": 3.899938213581329,
+      "MD": 721.03,
+      "Incl": 0.05794493116621174
+    },
+    {
+      "Az": 3.892433297797754,
+      "MD": 731.05,
+      "Incl": 0.07051130178057091
+    },
+    {
+      "Az": 3.8899898368449617,
+      "MD": 741.08,
+      "Incl": 0.08290313946973066
+    },
+    {
+      "Az": 3.9166933744004746,
+      "MD": 751.12,
+      "Incl": 0.09564404300928926
+    },
+    {
+      "Az": 3.9416515827039937,
+      "MD": 761.18,
+      "Incl": 0.10943214410004445
+    },
+    {
+      "Az": 3.958755809373538,
+      "MD": 771.25,
+      "Incl": 0.12391837689159739
+    },
+    {
+      "Az": 3.9702749824367007,
+      "MD": 781.33,
+      "Incl": 0.13805554383275145
+    },
+    {
+      "Az": 3.9814450896494646,
+      "MD": 791.44,
+      "Incl": 0.15062191444711065
+    },
+    {
+      "Az": 3.9968039870670147,
+      "MD": 801.56,
+      "Incl": 0.16336281798666924
+    },
+    {
+      "Az": 4.006752363803382,
+      "MD": 811.71,
+      "Incl": 0.17662732030182612
+    },
+    {
+      "Az": 4.0104175552325705,
+      "MD": 821.88,
+      "Incl": 0.18727382873899157
+    },
+    {
+      "Az": 4.012686483260163,
+      "MD": 832.06,
+      "Incl": 0.19739673840055869
+    },
+    {
+      "Az": 4.017224339315348,
+      "MD": 842.27,
+      "Incl": 0.20856684561332237
+    },
+    {
+      "Az": 4.02280939292173,
+      "MD": 852.51,
+      "Incl": 0.22200588085367873
+    },
+    {
+      "Az": 4.029965242854907,
+      "MD": 862.78,
+      "Incl": 0.2363175807200322
+    },
+    {
+      "Az": 4.036422961087286,
+      "MD": 873.08,
+      "Incl": 0.2506292805863857
+    },
+    {
+      "Az": 4.040437218366873,
+      "MD": 883.43,
+      "Incl": 0.2658136450787364
+    },
+    {
+      "Az": 4.041833481768468,
+      "MD": 893.81,
+      "Incl": 0.277332818141899
+    },
+    {
+      "Az": 4.043753343945662,
+      "MD": 904.21,
+      "Incl": 0.285012266850674
+    },
+    {
+      "Az": 4.046720403674053,
+      "MD": 914.65,
+      "Incl": 0.2916445180082525
+    },
+    {
+      "Az": 4.046196804898455,
+      "MD": 925.1,
+      "Incl": 0.29897490086662865
+    },
+    {
+      "Az": 4.044800541496858,
+      "MD": 935.57,
+      "Incl": 0.3066543495754037
+    },
+    {
+      "Az": 4.047418535374851,
+      "MD": 946.07,
+      "Incl": 0.3129375348825833
+    },
+    {
+      "Az": 4.049687463402443,
+      "MD": 956.6,
+      "Incl": 0.31922072018976283
+    },
+    {
+      "Az": 4.050036529252842,
+      "MD": 967.14,
+      "Incl": 0.32655110304813906
+    },
+    {
+      "Az": 4.050211062178041,
+      "MD": 977.71,
+      "Incl": 0.334579617607313
+    },
+    {
+      "Az": 4.052654523130833,
+      "MD": 988.32,
+      "Incl": 0.3436553297176835
+    },
+    {
+      "Az": 4.054050786532429,
+      "MD": 998.96,
+      "Incl": 0.35395277230445005
+    },
+    {
+      "Az": 4.052479990205634,
+      "MD": 1009.64,
+      "Incl": 0.3659955441432109
+    },
+    {
+      "Az": 4.0556215828592235,
+      "MD": 1020.38,
+      "Incl": 0.38135444156076104
+    },
+    {
+      "Az": 4.063650097418398,
+      "MD": 1031.19,
+      "Incl": 0.3975860036043083
+    },
+    {
+      "Az": 4.068013420548383,
+      "MD": 1042.07,
+      "Incl": 0.41085050591946515
+    },
+    {
+      "Az": 4.069584216875178,
+      "MD": 1053,
+      "Incl": 0.42184608020702946
+    },
+    {
+      "Az": 4.071678611977571,
+      "MD": 1063.99,
+      "Incl": 0.4295255289158045
+    },
+    {
+      "Az": 4.0751692704815605,
+      "MD": 1074.99,
+      "Incl": 0.4323180557189954
+    },
+    {
+      "Az": 4.080230725312344,
+      "MD": 1086,
+      "Incl": 0.43144539109299823
+    },
+    {
+      "Az": 4.081103389938341,
+      "MD": 1097.01,
+      "Incl": 0.43039819354180164
+    },
+    {
+      "Az": 4.077787264359551,
+      "MD": 1108.01,
+      "Incl": 0.4300491276914028
+    },
+    {
+      "Az": 4.076216468032757,
+      "MD": 1119.01,
+      "Incl": 0.42917646306540563
+    },
+    {
+      "Az": 4.076565533883155,
+      "MD": 1130,
+      "Incl": 0.42795473258900957
+    },
+    {
+      "Az": 4.0788344619107475,
+      "MD": 1140.99,
+      "Incl": 0.4272566008882119
+    },
+    {
+      "Az": 4.079358060686346,
+      "MD": 1151.98,
+      "Incl": 0.4255112716362175
+    },
+    {
+      "Az": 4.076914599733555,
+      "MD": 1162.95,
+      "Incl": 0.42289327775822605
+    },
+    {
+      "Az": 4.0755183363319585,
+      "MD": 1173.91,
+      "Incl": 0.42184608020702946
+    },
+    {
+      "Az": 4.074645671705962,
+      "MD": 1184.88,
+      "Incl": 0.4225442119078272
+    },
+    {
+      "Az": 4.075867402182357,
+      "MD": 1195.84,
+      "Incl": 0.4225442119078272
+    },
+    {
+      "Az": 4.0809288570131415,
+      "MD": 1206.8,
+      "Incl": 0.42010075095503513
+    },
+    {
+      "Az": 4.0842449825919305,
+      "MD": 1217.74,
+      "Incl": 0.41765729000224305
+    },
+    {
+      "Az": 4.084594048442329,
+      "MD": 1228.68,
+      "Incl": 0.4173082241518442
+    },
+    {
+      "Az": 4.084594048442329,
+      "MD": 1239.62,
+      "Incl": 0.416435559525847
+    },
+    {
+      "Az": 4.084943114292728,
+      "MD": 1250.55,
+      "Incl": 0.41486476319905213
+    },
+    {
+      "Az": 4.148822164915721,
+      "MD": 1260,
+      "Incl": 0.43127085816779887
+    },
+    {
+      "Az": 4.177969163424026,
+      "MD": 1270,
+      "Incl": 0.44523349218375347
+    },
+    {
+      "Az": 4.184426881656405,
+      "MD": 1280,
+      "Incl": 0.45483280306972224
+    },
+    {
+      "Az": 4.187917540160393,
+      "MD": 1290,
+      "Incl": 0.46460664688089054
+    },
+    {
+      "Az": 4.184601414581604,
+      "MD": 1300,
+      "Incl": 0.47438049069205873
+    },
+    {
+      "Az": 4.181110756077616,
+      "MD": 1310,
+      "Incl": 0.4852015320544236
+    },
+    {
+      "Az": 4.171162379341248,
+      "MD": 1320,
+      "Incl": 0.5019566928735691
+    },
+    {
+      "Az": 4.169940648864852,
+      "MD": 1330,
+      "Incl": 0.5174901232163187
+    },
+    {
+      "Az": 4.162959331856875,
+      "MD": 1340,
+      "Incl": 0.5318018230826722
+    },
+    {
+      "Az": 4.154232685596903,
+      "MD": 1350,
+      "Incl": 0.5490805826774161
+    },
+    {
+      "Az": 4.150043895392117,
+      "MD": 1360,
+      "Incl": 0.563566815468969
+    },
+    {
+      "Az": 4.14585510518733,
+      "MD": 1370,
+      "Incl": 0.5799729104377156
+    },
+    {
+      "Az": 4.142538979608541,
+      "MD": 1380,
+      "Incl": 0.5960299395560635
+    },
+    {
+      "Az": 4.134510465049367,
+      "MD": 1390,
+      "Incl": 0.6152285613280012
+    },
+    {
+      "Az": 4.133986866273769,
+      "MD": 1400,
+      "Incl": 0.6332054526235428
+    },
+    {
+      "Az": 4.132590602872173,
+      "MD": 1410,
+      "Incl": 0.651880475619882
+    },
+    {
+      "Az": 4.129274477293384,
+      "MD": 1420,
+      "Incl": 0.6709045644666203
+    },
+    {
+      "Az": 4.1315434053209765,
+      "MD": 1430,
+      "Incl": 0.688532389911763
+    },
+    {
+      "Az": 4.129623543143783,
+      "MD": 1440,
+      "Incl": 0.7035422214789143
+    },
+    {
+      "Az": 4.133288734572971,
+      "MD": 1450,
+      "Incl": 0.718377520120866
+    },
+    {
+      "Az": 4.13677939307696,
+      "MD": 1460,
+      "Incl": 0.732863752912419
+    },
+    {
+      "Az": 4.1360812613761615,
+      "MD": 1470,
+      "Incl": 0.747000919853573
+    },
+    {
+      "Az": 4.132241537021774,
+      "MD": 1480,
+      "Incl": 0.7607890209443283
+    },
+    {
+      "Az": 4.132241537021774,
+      "MD": 1490,
+      "Incl": 0.776846050062676
+    },
+    {
+      "Az": 4.133288734572971,
+      "MD": 1500,
+      "Incl": 0.7918558816298272
+    },
+    {
+      "Az": 4.134161399198969,
+      "MD": 1510,
+      "Incl": 0.8089601082993717
+    },
+    {
+      "Az": 4.141840847907743,
+      "MD": 1520,
+      "Incl": 0.8227482093901269
+    },
+    {
+      "Az": 4.152836422195308,
+      "MD": 1530,
+      "Incl": 0.8311257897996996
+    },
+    {
+      "Az": 4.1568506794748945,
+      "MD": 1540,
+      "Incl": 0.8370599092564804
+    },
+    {
+      "Az": 4.1580724099512905,
+      "MD": 1550,
+      "Incl": 0.8398524360596713
+    },
+    {
+      "Az": 4.150742027092915,
+      "MD": 1560,
+      "Incl": 0.842121364087264
+    },
+    {
+      "Az": 4.154058152671704,
+      "MD": 1570,
+      "Incl": 0.8419468311620646
+    },
+    {
+      "Az": 4.153709086821305,
+      "MD": 1580,
+      "Incl": 0.8429940287132611
+    },
+    {
+      "Az": 4.150218428317316,
+      "MD": 1590,
+      "Incl": 0.8433430945636601
+    },
+    {
+      "Az": 4.146553236888129,
+      "MD": 1600,
+      "Incl": 0.8429940287132611
+    },
+    {
+      "Az": 4.141666314982544,
+      "MD": 1610,
+      "Incl": 0.8461356213668509
+    },
+    {
+      "Az": 4.1414917820573445,
+      "MD": 1620,
+      "Incl": 0.8442157591896572
+    },
+    {
+      "Az": 4.142538979608541,
+      "MD": 1630,
+      "Incl": 0.8449138908904549
+    },
+    {
+      "Az": 4.1435861771597375,
+      "MD": 1640,
+      "Incl": 0.8442157591896572
+    },
+    {
+      "Az": 4.137302991852558,
+      "MD": 1650,
+      "Incl": 0.840899633610868
+    },
+    {
+      "Az": 4.137302991852558,
+      "MD": 1660,
+      "Incl": 0.8398524360596713
+    },
+    {
+      "Az": 4.139571919880151,
+      "MD": 1670,
+      "Incl": 0.8424704299376629
+    },
+    {
+      "Az": 4.14288804545894,
+      "MD": 1680,
+      "Incl": 0.8442157591896572
+    },
+    {
+      "Az": 4.1414917820573445,
+      "MD": 1690,
+      "Incl": 0.8480554835440448
+    },
+    {
+      "Az": 4.142015380832943,
+      "MD": 1700,
+      "Incl": 0.848579082319643
+    },
+    {
+      "Az": 4.151440158793712,
+      "MD": 1710,
+      "Incl": 0.8426449628628623
+    },
+    {
+      "Az": 4.151091092943314,
+      "MD": 1720,
+      "Incl": 0.8389797714336742
+    },
+    {
+      "Az": 4.156676146549695,
+      "MD": 1730,
+      "Incl": 0.8346164483036884
+    },
+    {
+      "Az": 4.156501613624496,
+      "MD": 1740,
+      "Incl": 0.8346164483036884
+    },
+    {
+      "Az": 4.1552798831481,
+      "MD": 1750,
+      "Incl": 0.8346164483036884
+    },
+    {
+      "Az": 4.158770541652088,
+      "MD": 1760,
+      "Incl": 0.8361872446304832
+    },
+    {
+      "Az": 4.16138853553008,
+      "MD": 1770,
+      "Incl": 0.8363617775556828
+    },
+    {
+      "Az": 4.159294140427686,
+      "MD": 1780,
+      "Incl": 0.8381071068076771
+    },
+    {
+      "Az": 4.160690403829282,
+      "MD": 1790,
+      "Incl": 0.832871119051694
+    },
+    {
+      "Az": 4.159119607502487,
+      "MD": 1800,
+      "Incl": 0.8325220532012952
+    },
+    {
+      "Az": 4.1552798831481,
+      "MD": 1810,
+      "Incl": 0.8346164483036884
+    },
+    {
+      "Az": 4.153883619746504,
+      "MD": 1820,
+      "Incl": 0.8361872446304832
+    },
+    {
+      "Az": 4.150742027092915,
+      "MD": 1830,
+      "Incl": 0.8372344421816799
+    },
+    {
+      "Az": 4.150392961242516,
+      "MD": 1840,
+      "Incl": 0.8349655141540873
+    },
+    {
+      "Az": 4.149694829541717,
+      "MD": 1850,
+      "Incl": 0.8353145800044861
+    },
+    {
+      "Az": 4.150218428317316,
+      "MD": 1860,
+      "Incl": 0.8356636458548851
+    },
+    {
+      "Az": 4.149520296616519,
+      "MD": 1870,
+      "Incl": 0.8346164483036884
+    },
+    {
+      "Az": 4.1535345538961055,
+      "MD": 1880,
+      "Incl": 0.8314748556500986
+    },
+    {
+      "Az": 4.160690403829282,
+      "MD": 1890,
+      "Incl": 0.8269369995949134
+    },
+    {
+      "Az": 4.162261200156077,
+      "MD": 1895.96,
+      "Incl": 0.8293804605477054
+    },
+    {
+      "Az": 4.194026192542374,
+      "MD": 1917.09,
+      "Incl": 0.8262388678941156
+    },
+    {
+      "Az": 4.182507019479211,
+      "MD": 1951.24,
+      "Incl": 0.8318239215004974
+    },
+    {
+      "Az": 4.1954224559439695,
+      "MD": 1978.29,
+      "Incl": 0.8295549934729048
+    },
+    {
+      "Az": 4.233470633637446,
+      "MD": 2005.57,
+      "Incl": 0.8297295263981043
+    },
+    {
+      "Az": 4.29368449283125,
+      "MD": 2032.83,
+      "Incl": 0.8293804605477054
+    },
+    {
+      "Az": 4.366115656789015,
+      "MD": 2060.11,
+      "Incl": 0.8318239215004974
+    },
+    {
+      "Az": 4.42004633067564,
+      "MD": 2087.38,
+      "Incl": 0.8208283472129332
+    },
+    {
+      "Az": 4.484972578849829,
+      "MD": 2124.31,
+      "Incl": 0.7930776121062233
+    },
+    {
+      "Az": 4.523369822393704,
+      "MD": 2151.72,
+      "Incl": 0.7794640439406675
+    },
+    {
+      "Az": 4.522497157767707,
+      "MD": 2179.2,
+      "Incl": 0.744557458900781
+    },
+    {
+      "Az": 4.520402762665314,
+      "MD": 2206.68,
+      "Incl": 0.7176793884200683
+    },
+    {
+      "Az": 4.551469623350812,
+      "MD": 2233.58,
+      "Incl": 0.6974335690969341
+    },
+    {
+      "Az": 4.706280328002709,
+      "MD": 2260.38,
+      "Incl": 0.6960373056953386
+    },
+    {
+      "Az": 4.828278842717113,
+      "MD": 2287.38,
+      "Incl": 0.7058111495065068
+    },
+    {
+      "Az": 4.916243437017627,
+      "MD": 2314.38,
+      "Incl": 0.7068583470577035
+    },
+    {
+      "Az": 4.9429469745731405,
+      "MD": 2341.63,
+      "Incl": 0.7646287452987158
+    },
+    {
+      "Az": 4.947135764777927,
+      "MD": 2368.86,
+      "Incl": 0.8365363104808822
+    },
+    {
+      "Az": 4.968952380427856,
+      "MD": 2396.26,
+      "Incl": 0.8356636458548851
+    },
+    {
+      "Az": 4.975933697435834,
+      "MD": 2423.2,
+      "Incl": 0.8049458510197848
+    },
+    {
+      "Az": 4.984834876621004,
+      "MD": 2450.72,
+      "Incl": 0.7726572598578897
+    },
+    {
+      "Az": 4.991467127778583,
+      "MD": 2477.65,
+      "Incl": 0.7400196028455956
+    },
+    {
+      "Az": 4.99216525947938,
+      "MD": 2504.93,
+      "Incl": 0.7190756518216638
+    },
+    {
+      "Az": 4.982216882743013,
+      "MD": 2532.11,
+      "Incl": 0.7216936456996553
+    },
+    {
+      "Az": 4.976457296211431,
+      "MD": 2559.57,
+      "Incl": 0.722391777400453
+    },
+    {
+      "Az": 4.981169685191816,
+      "MD": 2573.72,
+      "Incl": 0.7216936456996553
+    },
+    {
+      "Az": 4.981169685191816,
+      "MD": 2595,
+      "Incl": 0.7216936456996553
+    },
+    {
+      "Az": 4.981169685191816,
+      "MD": 2695,
+      "Incl": 0.7216936456996553
+    },
+    {
+      "Az": 4.981169685191816,
+      "MD": 2795,
+      "Incl": 0.7216936456996553
+    }
+  ]
+}
