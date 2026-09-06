@@ -1,5 +1,7 @@
 {
  "name": "digi_drilling_v1",
+ "doi": "10.5281/zenodo.22537645",
+ "url": "https://doi.org/10.5281/zenodo.22537645",
  "description": "Offline RL dataset for autonomous drilling ROP control, collected during TQC fine-tuning on the OpenLab simulator (transient torque-and-drag, Detournay bit-rock model) on a realistic layered formation (50-70 MPa UCS) with per-episode strength multiplier ~ U[0.2, 1.0].",
  "num_transitions": 510339,
  "num_episodes": 37,

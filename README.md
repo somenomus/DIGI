@@ -98,7 +98,7 @@ time (2-3 steps/s), so read the caps in `config.py` before launching anything.
 ## Dataset and trained policies
 
 The `digi-drilling-v1` dataset (510,339 transitions, 37 episodes) and the trained
-policies are archived on Zenodo, DOI to be added. The dataset's metadata card is
+policies are archived on Zenodo: https://doi.org/10.5281/zenodo.22537645. The dataset's metadata card is
 here at `offline_rl/dataset/digi_drilling_v1_meta.json`; the arrays and the policy
 files are not. `offline_rl/build_dataset.py` documents how the dataset was built from
 the replay buffer; it needs the raw buffer and the slurm logs, which are not included.
