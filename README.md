@@ -84,7 +84,7 @@ python -c "import make_paper_figs as m; m.fig_training_curve()"   # figs 2 and 8
 python tradeoff_table.py --check         # Table D.1, checked against the printed values
 ```
 
-Since September 2026 the paper's agent is the torque-gated one, so figs 4-6 and 9 come
+The paper's agent is the torque-gated one, so figs 4-6 and 9 come
 from `figs_gated/`; `figs/` keeps the original-reward versions of the same figures.
 `FIG_PREFIX=target` (the default) draws the original-reward runs and `FIG_PREFIX=gated`
 the torque-gated runs in both figure scripts; `make_gated_figs.py` sets it for you.
@@ -150,36 +150,6 @@ the replay buffer; it needs the raw buffer and the slurm logs, which are not inc
 One row per result file, read from the file's own metadata. The `logs/...` policy
 paths are where the checkpoints lived on the training machine; the archived policies
 are on Zenodo.
-
-| file | policy | formation | strength | steps to target (or DNF depth) |
-|---|---|---|---|---|
-| `eval_results/eval_20260517_041412.json` | logs/step4_hardening_20260512-173623/tqc_drilling_final.zip |  | 0.5, 0.7, 1.0, 1.3, 1.6 | DNF 7.39 m; DNF 7.13 m; DNF 6.42 m; DNF 5.98 m; DNF 5.75 m |
-| `eval_results/eval_20260528_203829.json` | logs/step4_hardening_20260512-173623/tqc_drilling_final.zip |  | 0.2, 0.3, 0.4, 0.5 | DNF 8.87 m; DNF 7.87 m; DNF 7.53 m; DNF 7.10 m |
-| `eval_results/eval_20260601_225955.json` | logs/step4_hardening_20260512-173623/tqc_drilling_final.zip |  | 0.2, 0.5 | DNF 9.56 m; DNF 7.61 m |
-| `eval_results/eval_20260608_143856.json` | logs/step4_hardening_20260512-173623/tqc_drilling_final.zip | drill_realistic | 0.2, 0.4, 1.0 | DNF 10.44 m; DNF 9.12 m; DNF 5.53 m |
-| `eval_results/eval_20260617_182445.json` | logs/step6_realistic_finetune_j5_20260616-125910/tqc_drilling_final.zip | drill_realistic | 0.2, 0.4, 1.0 | 14041; DNF 9.26 m; DNF 6.81 m |
-| `eval_results/eval_20260622_154234.json` | logs/step6_realistic_finetune_j5_20260616-125910/tqc_drilling_final.zip | drill_realistic | 1.0 | 36664 |
-| `eval_results/eval_20260709_235930.json` | logs/step6_realistic_finetune_j5_20260616-125910/tqc_drilling_final.zip | drill_mixed | 1.0 | DNF 9.42 m |
-| `eval_results/eval_20260710_150223.json` | logs/step6_realistic_finetune_j5_20260616-125910/tqc_drilling_final.zip | drill_mixed | 1.0 | 21286 |
-| `eval_results/eval_20260717_163817.json` | logs/step6_revised_reward_j1b/tqc_drilling_final.zip | drill_mixed | 1.0 | 17499 |
-| `eval_results/eval_20260910_212725.json` | logs/step6_revised_reward_j1b/tqc_drilling_final.zip | drill_realistic | 0.2 | 12030 |
-| `eval_results/eval_20260910_214450.json` | logs/step6_revised_reward_j1b/tqc_drilling_final.zip | drill_realistic | 0.4 | 16055 |
-| `eval_results/eval_20260910_225722.json` | logs/step6_revised_reward_j1b/tqc_drilling_final.zip | drill_realistic | 1.0 | 33029 |
-| `eval_results/offline_eval_20260711_104724.json` | offline_rl/models/td3bc_posret_200000/policy.d3 | drill_realistic | 0.4 | 18002 |
-| `eval_results/offline_eval_20260711_125024.json` | offline_rl/models/td3bc_full_200000/policy.d3 | drill_realistic | 0.4 | DNF 10.68 m |
-| `eval_results/offline_eval_20260711_145257.json` | offline_rl/models/iql_full_200000/policy.d3 | drill_realistic | 0.4 | DNF 9.84 m |
-| `eval_results/offline_eval_20260714_044701.json` | offline_rl/models/td3_finetuned/policy_finetuned.d3 | drill_realistic | 0.4, 0.2, 1.0 | DNF 5.12 m; 27574; 38095 |
-| `eval_results/offline_eval_20260714_074153.json` | offline_rl/models/td3_finetuned/policy_finetuned.d3 | drill_realistic | 0.4 | 34729 |
-| `baseline_results/highrpm_drill_realistic_ucs0.2_20260910_123937.json` | fixed 120 rpm, 10 t, 2200 L/min | drill_realistic | 0.2 | 21132 |
-| `baseline_results/highrpm_drill_realistic_ucs0.4_20260910_141742.json` | fixed 120 rpm, 10 t, 2200 L/min | drill_realistic | 0.4 | 30384 |
-| `baseline_results/highrpm_drill_realistic_ucs1.0_20260910_163054.json` | fixed 120 rpm, 10 t, 2200 L/min | drill_realistic | 1.0 | DNF 9.80 m |
-| `baseline_results/highrpm_mixed_drill_mixed_ucs1.0_20260910_124119.json` | fixed 120 rpm, 10 t, 2200 L/min | drill_mixed | 1.0 | 33570 |
-| `baseline_results/lowrpm_drill_realistic_ucs0.2_20260910_123848.json` | fixed 80 rpm, 12 t, 1800 L/min | drill_realistic | 0.2 | 12615 |
-| `baseline_results/lowrpm_drill_realistic_ucs0.4_20260910_141740.json` | fixed 80 rpm, 12 t, 1800 L/min | drill_realistic | 0.4 | 17937 |
-| `baseline_results/lowrpm_drill_realistic_ucs1.0_20260910_153654.json` | fixed 80 rpm, 12 t, 1800 L/min | drill_realistic | 1.0 | 33337 |
-| `baseline_results/lowrpm_mixed_drill_mixed_ucs1.0_20260910_140711.json` | fixed 80 rpm, 12 t, 1800 L/min | drill_mixed | 1.0 | 19724 |
-
-Blank formation = the configuration that was the default at the time (the pre-realistic preliminary formation). The 0.4x episode in `offline_eval_20260714_044701.json` ended early at 4,860 steps and was rerun in `offline_eval_20260714_074153.json`; Table 4 uses the rerun.
 
 ## About the vendored OpenLab client
 
