@@ -1,4 +1,4 @@
-# DIGI: deep reinforcement learning for ROP control on the OpenLab drilling simulator
+# Deep Reinforcement Learning for Rate-of-Penetration Control and Optimization in Drilling
 
 Code, configuration and cached results for the paper *Deep reinforcement learning for
 rate-of-penetration control and optimization for drilling* (Geoenergy Science and
