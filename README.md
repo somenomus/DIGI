@@ -147,9 +147,7 @@ the replay buffer; it needs the raw buffer and the slurm logs, which are not inc
 
 ## Evaluation records
 
-One row per result file, read from the file's own metadata. The `logs/...` policy
-paths are where the checkpoints lived on the training machine; the archived policies
-are on Zenodo.
+The `logs/...` policy paths are where the checkpoints lived on the training machine; the archived policies are on Zenodo.
 
 ## About the vendored OpenLab client
 
