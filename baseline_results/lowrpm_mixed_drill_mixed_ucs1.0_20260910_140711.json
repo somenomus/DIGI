@@ -1,0 +1,33 @@
+{
+  "ucs": 1.0,
+  "base_config": "drill_mixed",
+  "setpoints": {
+    "rpm": 80.0,
+    "wob_t": 12.0,
+    "flow_lpm": 1800.0
+  },
+  "normalized_action": [
+    -1.0,
+    1.0,
+    -1.0
+  ],
+  "max_steps": 40000,
+  "server_max_timestep": 48000,
+  "effective_cap_steps": 40000,
+  "aborted_with": null,
+  "steps": 19724,
+  "minutes_incl_warmup": 33.373333333333335,
+  "depth_progress_m": 11.000172642379312,
+  "target_reached": true,
+  "total_reward": 5270.779717708607,
+  "avg_rop_m_h": 17.438241661150144,
+  "hard_violations": 0,
+  "c3_flag_rate": 0.0033461772459947273,
+  "c3_flags": 66,
+  "min_safety_margin": 0.01949531106443242,
+  "max_torque_knm": 26.68446723149167,
+  "ecd_min_sg": 1.7171814260973821,
+  "ecd_max_sg": 1.7256882525265989,
+  "spp_max_bar": 119.16516229066887,
+  "traces_aligned": true
+}

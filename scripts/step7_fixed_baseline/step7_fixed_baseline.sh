@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --partition alldlc2_gpu-l40s
-#SBATCH --job-name step5_evaluate
+#SBATCH --job-name step7_baseline
 #SBATCH --time=1-00:00:00
 #SBATCH --output %x-%A.out
 #SBATCH --error %x-%A.err
@@ -36,10 +36,10 @@ find_digi_root() {
 
 DIGI_ROOT="$(find_digi_root)" || {
     echo "Could not determine digi repo root." >&2
-    echo "Submit from the repo root, or pass DIGI_REPO_ROOT=$PWD to sbatch." >&2
+    echo "Submit from the repo root, or pass DIGI_REPO_ROOT=/path/to/digi to sbatch." >&2
     exit 1
 }
-STEP_NAME="step5_final_evaluation"
+STEP_NAME="step7_fixed_baseline"
 TIMESTAMP="$(date +%Y%m%d-%H%M%S)"
 JOB_LOG_DIR="${DIGI_ROOT}/logs/slurm/${STEP_NAME}"
 
@@ -62,66 +62,17 @@ export PYTHONUNBUFFERED=1
 
 cd "${DIGI_ROOT}"
 
-MODEL_PATH="${MODEL_PATH:-}"
-EPISODES="${EPISODES:-3}"
-MAX_STEPS="${MAX_STEPS:-5000}"
-QUIET="${QUIET:-0}"
-USE_WANDB="${USE_WANDB:-1}"
-UCS_VALUES="${UCS_VALUES:-1.0 0.7 1.3 0.5 1.6}"
-USE_DETOURNAY="${USE_DETOURNAY:-0}"
-WOB_GAIN="${WOB_GAIN:-}"
-BASE_CONFIG="${BASE_CONFIG:-}"
-STEP_LOG="${JOB_LOG_DIR}/${STEP_NAME}-${TIMESTAMP}.log"
+# ---- fixed-setpoint baseline (PI request) ----
+# usage: sbatch --export=RPM=80,WOB=12,FLOW=1800,UCS_VALUES="0.2 0.4 1.0",BASE_CONFIG=drill_realistic,MAX_STEPS=50000,TAG=lowrpm scripts/step7_fixed_baseline/step7_fixed_baseline.sh
+RPM="${RPM:?set RPM}"; WOB="${WOB:?set WOB (t)}"; FLOW="${FLOW:?set FLOW (L/min)}"
+UCS_VALUES="${UCS_VALUES:-0.2 0.4 1.0}"
+BASE_CONFIG="${BASE_CONFIG:-drill_realistic}"
+MAX_STEPS="${MAX_STEPS:-50000}"
+TAG="${TAG:-fixed}"
+STEP_LOG="${JOB_LOG_DIR}/${STEP_NAME}-${TAG}-${TIMESTAMP}.log"
 
-if [[ -z "${MODEL_PATH}" ]]; then
-    echo "MODEL_PATH is required. Example:"
-    echo "  sbatch --export=MODEL_PATH=logs/<step4_run>/tqc_drilling_final.zip ${BASH_SOURCE[0]}"
-    exit 1
-fi
+python baseline_fixed.py --rpm "${RPM}" --wob "${WOB}" --flow "${FLOW}" \
+    --ucs ${UCS_VALUES} --base-config "${BASE_CONFIG}" --max-steps "${MAX_STEPS}" \
+    --tag "${TAG}" 2>&1 | tee "${STEP_LOG}"
 
-read -r -a UCS_ARRAY <<< "${UCS_VALUES}"
-
-CMD=(
-    python -u evaluate.py
-    --model "${MODEL_PATH}"
-    --episodes "${EPISODES}"
-    --max-steps "${MAX_STEPS}"
-    --ucs "${UCS_ARRAY[@]}"
-)
-
-if [[ "${QUIET}" == "1" ]]; then
-    CMD+=(--quiet)
-fi
-
-if [[ "${USE_WANDB}" != "1" ]]; then
-    CMD+=(--no-wandb)
-fi
-
-if [[ "${USE_DETOURNAY}" == "1" ]]; then
-    CMD+=(--use-detournay)
-fi
-
-if [[ -n "${WOB_GAIN}" ]]; then
-    CMD+=(--wob-gain "${WOB_GAIN}")
-fi
-
-if [[ -n "${BASE_CONFIG}" ]]; then
-    CMD+=(--base-config "${BASE_CONFIG}")
-fi
-
-# needed when several eval jobs run at once, otherwise each env reset ends the
-# others' simulations on the account
-if [[ "${NO_CLEANUP:-0}" == "1" ]]; then
-    CMD+=(--no-cleanup)
-fi
-
-if [[ "${DELETE_SIMS:-0}" == "1" ]]; then
-    CMD+=(--delete-sims)
-fi
-
-printf 'Command: '
-printf '%q ' "${CMD[@]}"
-echo
-"${CMD[@]}" 2>&1 | tee -a "${STEP_LOG}"
-
-echo "Job execution complete."
+echo "Finished at $(date)"

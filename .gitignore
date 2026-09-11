@@ -15,3 +15,5 @@ offline_rl/dataset/*.h5
 # trained policies live on Zenodo with the dataset
 offline_rl/models/*/*.d3
 /models/
+# review pngs written next to the pdfs by make_gated_figs.py
+paper_figures/figs_gated/*.png

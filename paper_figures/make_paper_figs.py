@@ -86,7 +86,9 @@ def mse_series(d):
     return out / 1e6  # MPa
 
 UCS = ["0.2", "0.4", "1.0"]
-T = {u: traj(f"target_{u}") for u in UCS}
+# "target" = original-reward runs, "gated" = torque-gated runs (see make_gated_figs.py)
+PREFIX = os.environ.get("FIG_PREFIX", "target")
+T = {u: traj(f"{PREFIX}_{u}") for u in UCS}
 MIX = traj("mixed_full")
 MIX["ecd"] = Z["mixed_full__ecd"] / 1000.0     # sg
 LAYERS_REal = [5, 6, 9, 10]                    # realistic-formation boundaries (m)
@@ -254,7 +256,10 @@ def fig_ecd():
     # (a) ECD, operating band with C1 above, C2 in the strip below
     ecd_hi = 0.0
     for u in UCS:
-        st = Z[f"target_{u}__ecd_step"]; e = Z[f"target_{u}__ecd"] / 1000.0
+        # the gated traces keep ECD on the main step axis, no __ecd_step key
+        k = f"{PREFIX}_{u}__ecd_step"
+        st = Z[k] if k in Z.files else Z[f"{PREFIX}_{u}__step"]
+        e = Z[f"{PREFIX}_{u}__ecd"] / 1000.0
         ecd_hi = max(ecd_hi, float(e.max()))
         for a in (ae_hi, ae_lo):
             a.plot(st * DT / 60.0, e, color=C[u], lw=0.9,
@@ -280,17 +285,20 @@ def fig_ecd():
     _break(ae_hi, ae_lo)
 
     # (b) SPP, C4 in the top strip, operating band below
-    spp_hi = 0.0
+    spp_hi, spp_lo = 0.0, 1e9
     for u in UCS:
-        st = Z[f"target_{u}__step"]; p = Z[f"target_{u}__spp"] / 1e5
-        spp_hi = max(spp_hi, float(p.max()))
+        st = Z[f"{PREFIX}_{u}__step"]; p = Z[f"{PREFIX}_{u}__spp"] / 1e5
+        spp_hi = max(spp_hi, float(p.max())); spp_lo = min(spp_lo, float(p.min()))
         for a in (ap_hi, ap_lo):
             a.plot(st * DT / 60.0, p, color=C[u], lw=0.9)
     for a in (ap_hi, ap_lo):
         a.axhspan(0, 200, color="#009E73", alpha=0.08, zorder=0)
     ap_hi.axhline(200, color="#B00020", ls="--", lw=0.9)
     ap_hi.set_ylim(193, 207); ap_hi.set_yticks([200])
-    ap_lo.set_ylim(92, 128);  ap_lo.set_yticks([100, 110, 120])
+    # window from the data. the original agent ran ~100-121 bar, the gated one
+    # ~144, a fixed window clips one of them
+    ap_lo.set_ylim(spp_lo - 8, spp_hi + 7)
+    ap_lo.set_yticks(np.arange(10 * np.ceil((spp_lo - 8) / 10), spp_hi + 7, 10))
     ap_hi.text(2, 201, "C4 pump limit", fontsize=7, color="#B00020", va="bottom")
     ap_lo.annotate(f"{200 - spp_hi:.0f} bar headroom", xy=(52, spp_hi),
                    xytext=(0, 6), textcoords="offset points", fontsize=7.5,

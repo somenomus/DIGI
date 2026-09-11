@@ -18,6 +18,7 @@ Default sequence:
 4. `sbatch scripts/step3_hpo_hardening/step3_hpo_hardening.sh`
 5. `sbatch --export=RESUME_MODEL=logs/<step2_run>/tqc_drilling_final.zip scripts/step4_curriculum_hardening/step4_curriculum_hardening.sh`
 6. `sbatch --export=MODEL_PATH=logs/<step4_run>/tqc_drilling_final.zip scripts/step5_final_evaluation/step5_final_evaluation.sh`
+7. `sbatch --export=RPM=80,WOB=12,FLOW=1800,UCS_VALUES="0.2 0.4 1.0",BASE_CONFIG=drill_realistic,MAX_STEPS=50000,TAG=lowrpm scripts/step7_fixed_baseline/step7_fixed_baseline.sh` (fixed-setpoint baseline, one constant setpoint per run)
 
 Useful overrides:
 
@@ -25,6 +26,8 @@ Useful overrides:
   `sbatch --export=RUN_VERIFY_API=1 scripts/step0_verify_transient/step0_verify_transient.sh`
 - Resume HPO with additional trials:
   `sbatch --export=N_TRIALS=6 scripts/step1_hpo_learning/step1_hpo_learning.sh`
+- Several step 5 evaluations at once (each env reset would otherwise end the others' sims), optionally deleting each stored sim afterwards:
+  `sbatch --export=MODEL_PATH=...,NO_CLEANUP=1,DELETE_SIMS=1 scripts/step5_final_evaluation/step5_final_evaluation.sh`
 - Disable W&B on any scripted run:
   `sbatch --export=USE_WANDB=0 <script>`
 - Resume Step 2 after interruption:

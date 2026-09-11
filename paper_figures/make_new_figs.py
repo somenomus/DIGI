@@ -26,6 +26,10 @@ plt.rcParams.update({
     "lines.linewidth": 1.2, "savefig.bbox": "tight", "pdf.fonttype": 42,
 })
 Z = np.load(os.path.join(ROOT, "paper_trajectories.npz"), allow_pickle=True)
+# which agent the completion figure draws. "target" = the original-reward runs,
+# "gated" = the torque-gated runs, the paper's agent since sept 2026. same three
+# strengths either way, only the trace keys change. make_gated_figs.py sets it
+PREFIX = os.environ.get("FIG_PREFIX", "target")
 
 def sm(y, w=300):
     """centred rolling mean with proper edge handling. np.convolve mode="same"
@@ -54,36 +58,50 @@ def fig_completion():
     the other 9pt, and the heights differed. one figure fixes that by
     construction. authored ~1 in wider than the column, the tight bbox crops
     it back."""
-    mins = {"0.2": 23.9, "0.4": 32.7, "1.0": 61.6}
+    # time to target incl. the 300 step warm-up, straight from the trace
+    mins = {u: (len(Z[f"{PREFIX}_{u}__step"]) + cfg.WARMUP_STEPS) * DT / 60.0
+            for u in UCS}
     fig, (a1, a2) = plt.subplots(1, 2, figsize=(7.55, 2.35),
                                  gridspec_kw={"wspace": 0.27})
 
     for u in UCS:                                   # (a) depth vs time
-        d = _traj(f"target_{u}")
+        d = _traj(f"{PREFIX}_{u}")
         a1.plot(d["t"], d["dep"], color=C[u], label=rf"${u}\times$")
         a1.plot(d["t"][-1], d["dep"][-1], "*", color=C[u], ms=10, zorder=5)
-        # time above each star. the strip between the target line and the frame is
-        # empty so a label cant land on another curve
+        # time beside each star, in the strip between the target rule and the
+        # frame (the y range leaves ~19 pt for it). 27.3 and 55.5 go right of
+        # their stars, 20.6 stays left because the 0.4x star lands a few
+        # minutes to the right. ink, not series colour, the star carries identity
+        dx, ha = {"0.2": (-2, "right"), "0.4": (4, "left"), "1.0": (4, "left")}[u]
         a1.annotate(f"{mins[u]:.1f}", (d["t"][-1], d["dep"][-1]),
-                    xytext=(0, 8), textcoords="offset points",
-                    fontsize=8, color=C[u], ha="center", fontweight="bold")
-    a1.legend(loc="upper left", ncol=1, handlelength=1.2,
+                    xytext=(dx, 5), textcoords="offset points", va="bottom",
+                    fontsize=8, color="#222222", ha=ha, fontweight="bold")
+    # lower right is empty, the slowest run is still above 9 m there
+    a1.legend(loc="lower right", ncol=1, handlelength=1.2,
               handletextpad=0.5, labelspacing=0.3)
     a1.axhline(TARGET, color="k", ls="--", lw=0.9)
     a1.set_xlabel("Time (min)"); a1.set_ylabel("Depth drilled (m)")
-    a1.set_ylim(0, 12.3); a1.set_xlim(0, 71)
+    a1.set_ylim(0, 12.9); a1.set_xlim(0, max(mins.values()) + 9.5)
 
     # (b) ROP vs depth from bit engagement. before ~3.5 m the bit is running to
     # bottom through open hole at ~100 m/h, thats not penetration, and on this
     # axis it shot off the top with nothing explaining it. shade that bit and
-    # start each trace where the smoothed rate enters the axis. the 0.2x
-    # overshoot peaks at 56 so the axis is 60
+    # start each trace where the smoothed rate enters the axis
     ENGAGE, YTOP = 3.5, 60.0
+    trs = {}
     for u in UCS:
-        d = _traj(f"target_{u}")
+        d = _traj(f"{PREFIX}_{u}")
         r = sm(d["rop"]); dep = d["dep"]
         i0 = int(np.argmax((dep >= ENGAGE) & (r <= YTOP)))
-        a2.plot(dep[i0:], r[i0:], color=C[u], label=rf"${u}\times$")
+        trs[u] = (dep[i0:], r[i0:])
+    # if a run overshoots the provisional cap after engagement, lift the axis
+    # to the next decade instead of clipping (the gated 0.2x run peaks at 60.7)
+    pk = max(float(np.nanmax(r)) for _, r in trs.values())
+    if pk > YTOP:
+        YTOP = float(10 * np.ceil(pk * 1.03 / 10))
+    for u in UCS:
+        dep, r = trs[u]
+        a2.plot(dep, r, color=C[u], label=rf"${u}\times$")
     a2.axvspan(0, ENGAGE, color="#9AA5AD", alpha=0.20, lw=0, zorder=0)
     a2.text(ENGAGE / 2, 0.5 * YTOP, "run to\nbottom", ha="center", va="center",
             fontsize=7, color="#5A6570")

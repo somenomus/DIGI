@@ -29,12 +29,20 @@ def evaluate_one_episode(model, ucs_val: float, max_steps: int = 5000,
                          verbose: bool = True,
                          use_detournay_rop: bool = False,
                          wob_proportional_gain: float = None,
-                         base_config_name: str = None) -> dict:
+                         base_config_name: str = None,
+                         cleanup_on_reset: bool = True,
+                         session=None,
+                         delete_sim: bool = False) -> dict:
     """Run one deterministic episode on a specific UCS formation."""
     env = DrillingEnv(ucs_multiplier=ucs_val, max_steps=max_steps,
                       use_detournay_rop=use_detournay_rop,
                       wob_proportional_gain=wob_proportional_gain,
-                      base_config_name=base_config_name)
+                      base_config_name=base_config_name,
+                      cleanup_on_reset=cleanup_on_reset)
+    # a ready session skips switch_user(), which rewrites account.py and races
+    # when several eval jobs run at once
+    if session is not None:
+        env._session = session
 
     obs, info = env.reset()
     total_reward = 0.0
@@ -79,6 +87,13 @@ def evaluate_one_episode(model, ucs_val: float, max_steps: int = 5000,
             break
 
     env.close()
+    # drop the stored sim so the 20 sim cap doesnt fill up (best effort)
+    sim_id = getattr(getattr(env, "_sim", None), "sim_id", None)
+    if delete_sim and sim_id is not None and session is not None:
+        try:
+            session.delete_simulation(sim_id)
+        except Exception:
+            pass
 
     result = {
         "ucs": ucs_val,
@@ -102,7 +117,8 @@ def evaluate_one_episode(model, ucs_val: float, max_steps: int = 5000,
 def evaluate(model_path: str, ucs_values: list, episodes_per_ucs: int = 1,
              max_steps: int = 5000, verbose: bool = True,
              use_wandb: bool = True, use_detournay_rop: bool = False,
-             wob_proportional_gain: float = None, base_config_name: str = None):
+             wob_proportional_gain: float = None, base_config_name: str = None,
+             cleanup_on_reset: bool = True, delete_sims: bool = False):
     """Evaluate a trained model across multiple UCS formations."""
 
     print("=" * 70)
@@ -134,6 +150,20 @@ def evaluate(model_path: str, ucs_values: list, episodes_per_ucs: int = 1,
             },
         )
 
+    # one login per process. with cleanup off the env would call switch_user()
+    # itself, which writes account.py and races other jobs. deleting sims needs
+    # the session too, so --delete-sims alone also takes this path
+    session = None
+    if not cleanup_on_reset or delete_sims:
+        import openlab
+        session = openlab.http_client(username=cfg.OPENLAB_EMAIL,
+                                      apikey=cfg.OPENLAB_API_KEY,
+                                      licenseguid=cfg.OPENLAB_LICENSE_GUID)
+        lim = session.user_limits()
+        print(f"  Server limits: active={lim.get('ActiveSimulationCount')}/"
+              f"{lim.get('MaxConcurrentSimulations')}  "
+              f"steps={lim.get('UsedStepCount')}/{lim.get('MaxStepCount')}")
+
     print("Loading model...")
     model = TQC.load(model_path)
     print(f"  Policy: {model.policy.__class__.__name__}")
@@ -155,7 +185,10 @@ def evaluate(model_path: str, ucs_values: list, episodes_per_ucs: int = 1,
             result = evaluate_one_episode(model, ucs_val, max_steps, verbose,
                                           use_detournay_rop=use_detournay_rop,
                                           wob_proportional_gain=wob_proportional_gain,
-                                          base_config_name=base_config_name)
+                                          base_config_name=base_config_name,
+                                          cleanup_on_reset=cleanup_on_reset,
+                                          session=session,
+                                          delete_sim=delete_sims)
             ucs_episode_results.append(result)
             all_results.append(result)
 
@@ -307,6 +340,13 @@ if __name__ == "__main__":
     parser.add_argument("--base-config", type=str, default=None,
                         help="Override base formation config name (e.g. 'drill_realistic' "
                              "for the 50-70 MPa formation). Default: config.py CONFIG_NAME.")
+    parser.add_argument("--no-cleanup", action="store_true",
+                        help="Do not end other running simulations on reset. Needed when "
+                             "several evaluation jobs run at once, otherwise each job kills "
+                             "the others' simulations.")
+    parser.add_argument("--delete-sims", action="store_true",
+                        help="Delete each episode's stored simulation after it finishes "
+                             "(uses one shared login per process).")
     args = parser.parse_args()
 
     evaluate(args.model, args.ucs, episodes_per_ucs=args.episodes,
@@ -314,4 +354,6 @@ if __name__ == "__main__":
              use_wandb=not args.no_wandb,
              use_detournay_rop=args.use_detournay,
              wob_proportional_gain=args.wob_gain,
-             base_config_name=args.base_config)
+             base_config_name=args.base_config,
+             cleanup_on_reset=not args.no_cleanup,
+             delete_sims=args.delete_sims)
