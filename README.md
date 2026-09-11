@@ -147,7 +147,10 @@ the replay buffer; it needs the raw buffer and the slurm logs, which are not inc
 
 ## Evaluation records
 
-The `logs/...` policy paths are where the checkpoints lived on the training machine; the archived policies are on Zenodo.
+`eval_results/` holds one JSON summary per evaluation run, and `baseline_results/` one
+JSON plus a per-step NPZ trace per fixed-setpoint episode. Each file records the policy,
+formation, strength and outcome it came from. The `logs/...` policy paths inside them are
+where the checkpoints lived on the training machine; the archived policies are on Zenodo.
 
 ## About the vendored OpenLab client
 
