@@ -1,0 +1,38 @@
+{
+ "policy": "offline_rl/models/iql_full_200000/policy.d3",
+ "base_config": "drill_realistic",
+ "max_steps": 25000,
+ "no_cleanup": true,
+ "timestamp": "2026-09-12T20:22:59.525938",
+ "results": [
+  {
+   "ucs": 0.4,
+   "return": -2470.07641824638,
+   "depth_m": 9.839822239634486,
+   "target": false,
+   "steps": 24700,
+   "error": null,
+   "hard_violations": 0,
+   "c3_flags": 1770,
+   "c3_flag_rate": 0.07165991902834008,
+   "violations_by_constraint": {
+    "C1": 0,
+    "C2": 0,
+    "C3": 1770,
+    "C4": 0,
+    "C5": 0,
+    "C6": 0,
+    "C7": 0,
+    "C8": 0
+   },
+   "max_torque_knm": 25.130971558010984,
+   "ecd_min_sg": 1.7177363935771721,
+   "ecd_max_sg": 1.7264650640993195,
+   "spp_max_bar": 144.12458179784684,
+   "min_safety_margin": 0.019053940852659358,
+   "sim_id": "47a77a8b-6bdf-4016-b363-074d8a0218ed"
+  }
+ ],
+ "provenance": "Re-run 2026-09-12 with 6 threads, as the July 2026 original (offline_eval_20260711_145257.json). Every field of the original record is identical to full precision; the telemetry fields and the .npz trace are new.",
+ "supersedes": "offline_eval_20260711_145257.json"
+}

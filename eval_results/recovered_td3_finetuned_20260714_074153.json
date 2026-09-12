@@ -1,0 +1,32 @@
+{
+ "policy": "offline_rl/models/td3_finetuned/policy_finetuned.d3",
+ "base_config": "drill_realistic",
+ "max_steps": 42000,
+ "provenance": "Original July 2026 record plus telemetry recovered 2026-09-12 from the stored OpenLab simulation of this episode. Constraint counts were recomputed from the server time series with the environment's thresholds and C3 rule; safety_margin and rop_mh were not recovered.",
+ "results": [
+  {
+   "ucs": 0.4,
+   "return": -34294.88672435916,
+   "depth_m": 11.000129540932448,
+   "target": true,
+   "steps": 34729,
+   "error": null,
+   "hard_violations": 0,
+   "c3_flags": 10993,
+   "c3_flag_rate": 0.31653661205332717,
+   "violations_by_constraint": {
+    "C1": 0,
+    "C2": 0,
+    "C3": 10993,
+    "C4": 0,
+    "C5": 0
+   },
+   "max_torque_knm": 22.45915181727682,
+   "ecd_min_sg": 1.7140565437592443,
+   "ecd_max_sg": 1.7296198930296147,
+   "spp_max_bar": 141.3729729141357,
+   "sim_id": "d06060d5-113b-4d95-96fd-5a5b727b00bb"
+  }
+ ],
+ "supersedes": "offline_eval_20260714_074153.json"
+}
