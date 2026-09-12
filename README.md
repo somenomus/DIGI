@@ -153,11 +153,7 @@ formation, strength and outcome it came from. The `logs/...` policy paths inside
 where the checkpoints lived on the training machine; the archived policies are on Zenodo.
 
 The four offline-candidate records behind Table 4 also carry constraint counts and a
-per-step NPZ trace. The three `reval_*` files are re-runs from 12 September 2026 that
-reproduce the original July 2026 runs to full precision; exact reproduction needs the
-original job's 6 CPU threads. The `recovered_*` file is the fine-tuned policy's 0.4x
-episode, whose series was recovered from its stored simulation because the original
-evaluation script recorded no telemetry.
+per-step NPZ trace.
 
 ## About the vendored OpenLab client
 
