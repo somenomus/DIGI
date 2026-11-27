@@ -1,8 +1,7 @@
 # Deep Reinforcement Learning for Rate-of-Penetration Control and Optimization in Drilling
 
-Code, configuration and cached results for the paper *Deep reinforcement learning for
-rate-of-penetration control and optimization for drilling* (Geoenergy Science and
-Engineering, submitted 2026).
+Code, configuration and cached results for the paper *Deep Reinforcement Learning for
+Rate-of-Penetration Control and Optimization in Drilling* (manuscript under review, 2026).
 
 A TQC agent sets rotary speed, weight on bit and mud flow rate in NORCE's OpenLab
 simulator and drills an 11 m section under hard operating limits. This repo has the
